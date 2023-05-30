@@ -8,32 +8,9 @@
     <title>Home | EZ Engenharia</title>
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
 
-    <!-- Fonts-->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- Css-->
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
-    <link rel="stylesheet" href="assets/css/jarallax.css">
-
-    <link rel="stylesheet" href="assets/css/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" href="assets/css/vegas.min.css">
-    <link rel="stylesheet" href="assets/css/nouislider.min.css">
-    <link rel="stylesheet" href="assets/css/nouislider.pips.css">
-    <link rel="stylesheet" href="assets/css/ziston-icon.css">
-    <link rel="stylesheet" href="assets/css/flaticon.css">
-    <!-- Template styles -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <?php /*CSS*/
+    include('php/css.php');
+    ?>
 
 </head>
 
@@ -46,7 +23,7 @@
     <div class="page-wrapper">
 
         <?php /*MENU*/
-        include ('php/menu.php');
+        include('php/menu.php');
         ?>
 
         <!--Main Slider Start-->
@@ -69,8 +46,7 @@
 
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/main-slider/slider-1-1.jpg);"></div>
+                        <div class="image-layer" style="background-image: url(assets/images/main-slider/slider-1-1.jpg);"></div>
                         <div class="container">
                             <div class="swiper-slide-inner">
                                 <div class="row">
@@ -83,8 +59,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image-layer"
-                            style="background-image: url(assets/images/main-slider/slider-1-2.jpg);"></div>
+                        <div class="image-layer" style="background-image: url(assets/images/main-slider/slider-1-2.jpg);"></div>
                         <div class="container">
                             <div class="swiper-slide-inner">
                                 <div class="row">
@@ -106,68 +81,8 @@
             </div>
         </section>
 
-        <section class="welcome_one">
-            <div class="welcome_one_shape_bg"
-                style="background-image: url(assets/images/resources/welcome_one_shape-bg.png)"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="welcome_one_left">
-                            <div class="welcome_one_left_image">
-                                <img src="assets/images/resources/welcome-1-img-1.jpg" alt="">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <div class="welcome_one_right_content">
-                            <div class="block-title text-left">
-                                <h4>Sobre</h4>
-                                <h2>We’re More than a Industrial Company</h2>
-                            </div>
-                            <div class="welcome_one_right_text_box">
-                                <p class="welcome_one_right_second_text">There are many variations of passages of Lorem
-                                    Ipsum available, but the majority have suffered alteration in some form, by injected
-                                    humour. Lorem are many variations of passages of Lorem
-                                    Ipsum available, but the majority have suffered.</p>
-                            </div>
-                            <ul class="list-unstyled">
-                                <li><i class="fa fa-check"></i>Invest in your simply neighborhood</li>
-                                <li><i class="fa fa-check"></i>Support people in free text extreme need</li>
-                                <li><i class="fa fa-check"></i>Largest global industrial business community</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-         <!--Counter Three Start-->
-         <section class="counter_two three" style="background-image: url(assets/images/resources/counter_two_bg.jpg)">
-            <div class="container">
-                <ul class="counter_two_box list-unstyled">
-                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
-                        <h2 class="counter">203</h2>
-                        <p>Métrica 1</p>
-                    </li>
-                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
-                        <h2 class="counter">480</h2>
-                        <p>Métrica 2</p>
-                    </li>
-                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-                        <h2 class="counter">260</h2>
-                        <p>Métrica 3</p>
-                    </li>
-                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
-                        <h2 class="counter">74</h2>
-                        <p>Métrica 4</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Our Services One Start -->
-        <section class="our_services_one">
+         <!-- Áreas de Atuação -->
+         <section class="our_services_one">
             <div class="container">
                 <div class="block-title text-center">
                     <h4>atuação</h4>
@@ -211,9 +126,69 @@
             </div>
         </section>
 
+<!--Counter Three Start-->
+<section class="counter_two three" style="background-image: url(assets/images/resources/counter_two_bg.jpg)">
+            <div class="container">
+                <ul class="counter_two_box list-unstyled">
+                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                        <h2 class="counter">203</h2>
+                        <p>Métrica 1</p>
+                    </li>
+                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="200ms" data-wow-duration="1500ms">
+                        <h2 class="counter">480</h2>
+                        <p>Métrica 2</p>
+                    </li>
+                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
+                        <h2 class="counter">260</h2>
+                        <p>Métrica 3</p>
+                    </li>
+                    <li class="counter_two_single wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
+                        <h2 class="counter">74</h2>
+                        <p>Métrica 4</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <!-- Projetos -->
+        <section class="brand-one">
+            <div class="container">
+                <div class="brand-one__carousel owl-carousel thm__owl-carousel owl-theme"
+                    data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "items": 5, "dots": false, "nav": false, "margin": 140, "smartSpeed": 700, "responsive": { "0": {"items": 2, "margin": 30}, "480": {"items": 3, "margin": 30}, "991": {"items": 4, "margin": 50}, "1199": {"items": 4, "margin": 100}}}'>
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <img src="assets/images/brand/brand-1-1.png" alt="">
+                    </div><!-- /.item -->
+                </div>
+            </div>
+        </section>
 
-        
         <!--Projects One Start-->
         <section class="our_projects_one">
             <div class="container">
@@ -474,6 +449,41 @@
             </div>
         </section>
 
+        <section class="welcome_one">
+            <div class="welcome_one_shape_bg" style="background-image: url(assets/images/resources/welcome_one_shape-bg.png)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="welcome_one_left">
+                            <div class="welcome_one_left_image">
+                                <img src="assets/images/resources/welcome-1-img-1.jpg" alt="">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="welcome_one_right_content">
+                            <div class="block-title text-left">
+                                <h4>Sobre</h4>
+                                <h2>We’re More than a Industrial Company</h2>
+                            </div>
+                            <div class="welcome_one_right_text_box">
+                                <p class="welcome_one_right_second_text">There are many variations of passages of Lorem
+                                    Ipsum available, but the majority have suffered alteration in some form, by injected
+                                    humour. Lorem are many variations of passages of Lorem
+                                    Ipsum available, but the majority have suffered.</p>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li><i class="fa fa-check"></i>Invest in your simply neighborhood</li>
+                                <li><i class="fa fa-check"></i>Support people in free text extreme need</li>
+                                <li><i class="fa fa-check"></i>Largest global industrial business community</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="blog_one">
             <div class="container">
                 <div class="block-title text-center">
@@ -546,7 +556,7 @@
         </section>
 
         <?php /*FOOTER*/
-        include ('php/footer.php');
+        include('php/footer.php');
         ?>
 
     </div><!-- /.page-wrapper -->
@@ -560,8 +570,7 @@
             <span class="mobile-nav__close side-menu__toggler mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.php" aria-label="logo image"><img src="assets/images/resources/logo.png" width="101"
-                        alt="" /></a>
+                <a href="index.php" aria-label="logo image"><img src="assets/images/resources/logo.png" width="101" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container clearfix"></div>
@@ -614,36 +623,9 @@
         </div>
     </div>
 
-
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/waypoints.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/TweenMax.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.ajaxchimp.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/typed-2.0.11.js"></script>
-    <script src="assets/js/vegas.min.js"></script>
-    <script src="assets/js/jquery.validate.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/countdown.min.js"></script>
-    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="assets/js/bootstrap-datepicker.min.js"></script>
-    <script src="assets/js/nouislider.min.js"></script>
-    <script src="assets/js/isotope.js"></script>
-    <script src="assets/js/appear.js"></script>
-    <script src="assets/js/jarallax.min.js"></script>
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyATY4Rxc8jNvDpsK8ZetC7JyN4PFVYGCGM"></script>
-
-
-
-
-    <!-- template scripts -->
-    <script src="assets/js/theme.js"></script>
+    <?php /*SCRIPTS*/
+    include('php/scripts.php');
+    ?>
 
 
 </body>
