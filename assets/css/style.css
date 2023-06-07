@@ -619,7 +619,7 @@ li {
 .logo_one {
   position: relative;
   display: block;
-  padding: 15.5px 0;
+  padding: 15.5px 0 15.5px 28px;
 }
 .logo_one a {
   display: inline-block;

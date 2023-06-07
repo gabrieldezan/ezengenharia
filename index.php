@@ -81,8 +81,8 @@
             </div>
         </section>
 
-         <!-- Áreas de Atuação -->
-         <section class="our_services_one">
+        <!-- Áreas de Atuação -->
+        <section class="our_services_one">
             <div class="container">
                 <div class="block-title text-center">
                     <h4>atuação</h4>
@@ -126,8 +126,8 @@
             </div>
         </section>
 
-<!--Counter Three Start-->
-<section class="counter_two three" style="background-image: url(assets/images/resources/counter_two_bg.jpg)">
+        <!--Counter Three Start-->
+        <section class="counter_two three" style="background-image: url(assets/images/resources/counter_two_bg.jpg)">
             <div class="container">
                 <ul class="counter_two_box list-unstyled">
                     <li class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
@@ -153,38 +153,45 @@
         <!-- Projetos -->
         <section class="brand-one">
             <div class="container">
-                <div class="brand-one__carousel owl-carousel thm__owl-carousel owl-theme"
-                    data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "items": 5, "dots": false, "nav": false, "margin": 140, "smartSpeed": 700, "responsive": { "0": {"items": 2, "margin": 30}, "480": {"items": 3, "margin": 30}, "991": {"items": 4, "margin": 50}, "1199": {"items": 4, "margin": 100}}}'>
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
-                    <div class="item">
-                        <img src="assets/images/brand/brand-1-1.png" alt="">
-                    </div><!-- /.item -->
+                <div class="row">
+                    <div class="block-title text-left">
+                        <h4>Parceiros</h4>
+                        <h2>Nossos parceiros</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="brand-one__carousel owl-carousel thm__owl-carousel owl-theme" data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "items": 5, "dots": false, "nav": false, "margin": 140, "smartSpeed": 700, "responsive": { "0": {"items": 2, "margin": 30}, "480": {"items": 3, "margin": 30}, "991": {"items": 4, "margin": 50}, "1199": {"items": 4, "margin": 100}}}'>
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="assets/images/brand/brand-1-1.png" alt="">
+                        </div><!-- /.item -->
+                    </div>
                 </div>
             </div>
         </section>
