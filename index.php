@@ -91,9 +91,7 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4">
                         <div class="our_services_one_single wow fadeInUp">
-                            <div class="our_services_one_image">
-                                <img src="assets/images/service/service-1-img-1.jpg" alt="">
-                            </div>
+                                <img src="assets/images/icone.png" alt="">
                             <div class="our_services_one_content">
                                 <h3>Área de Atuação 1</h3>
                                 <p>Aliq is notm hendr erit a augue insu image pellen simply freede text ipsum.</p>
@@ -101,10 +99,8 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <div class="our_services_one_single wow fadeInUp" data-wow-delay="100ms">
-                            <div class="our_services_one_image">
-                                <img src="assets/images/service/service-1-img-2.jpg" alt="">
-                            </div>
+                        <div class="our_services_one_single wow fadeInUp">
+                                <img src="assets/images/icone.png" alt="">
                             <div class="our_services_one_content">
                                 <h3>Área de Atuação 2</h3>
                                 <p>Aliq is notm hendr erit a augue insu image pellen simply freede text ipsum.</p>
@@ -112,16 +108,15 @@
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4">
-                        <div class="our_services_one_single wow fadeInUp" data-wow-delay="200ms">
-                            <div class="our_services_one_image">
-                                <img src="assets/images/service/service-1-img-3.jpg" alt="">
-                            </div>
+                        <div class="our_services_one_single wow fadeInUp">
+                                <img src="assets/images/icone.png" alt="">
                             <div class="our_services_one_content">
                                 <h3>Área de Atuação 3</h3>
                                 <p>Aliq is notm hendr erit a augue insu image pellen simply freede text ipsum.</p>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>

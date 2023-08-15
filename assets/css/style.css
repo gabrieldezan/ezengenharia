@@ -2152,11 +2152,16 @@ li {
 .our_services_one .block-title {
 }
 .our_services_one_single {
+  border: 2px solid #e4e4e4;
+  padding: 40px;
   position: relative;
   display: block;
   margin-bottom: 55px;
   background: #ffffff;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .our_services_one_single:hover:before {
   width: 100%;
@@ -2217,16 +2222,14 @@ li {
   line-height: 100px;
 }
 .our_services_one_content {
-  padding: 43px 50px 53px;
-  border-left: 2px solid #e4e4e4;
-  border-right: 2px solid #e4e4e4;
-  border-bottom: 2px solid #e4e4e4;
+  padding-top: 40px;
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
+  text-align: center;
 }
 .our_services_one_single:hover .our_services_one_content {
   background-color: rgb(255, 255, 255);
-  box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0px 10px 60px 0px rgba(0, 0, 0, 0.1); */
 }
 
 .our_services_one_content h3 {
