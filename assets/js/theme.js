@@ -1,6 +1,35 @@
 (function ($) {
   "use strict";
 
+  var show_char = 250;
+  var ellipses = "... ";
+  $(".testimonails_two_text > p").each(function (index) {
+    var $longText = $(this);
+    var content = $longText.text();
+    if (content.length > show_char) {
+      var firstPart = content.substr(0, show_char);
+      var secondPart = content.substr(show_char - content.length);
+      var html =
+        firstPart +
+        "<span class='truncated'>" +
+        ellipses +
+        "</span><span class='truncated' style='display:none'>" +
+        secondPart +
+        "</span><span class='btn btn-xs cursor-pointer read-more'><i class='fa fa-angle-down'></i> Ver mais</span>";
+      $longText.html("<p>" + html + "</p>");
+    }
+  });
+
+  $(".read-more").click(function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.html() == '<i class="fa fa-angle-down"></i> Ver mais'
+      ? $this.html('<i class="fa fa-angle-up"></i> Ver menos')
+      : $this.html('<i class="fa fa-angle-down"></i> Ver mais');
+    $this.parent("p").find(".long-text").toggle();
+    $this.parent("p").find(".truncated").toggle();
+  });
+
   // Testimonial One Carousel
   if ($(".testimonails_one_carousel").length) {
     $(".testimonails_one_carousel").owlCarousel({
@@ -14,25 +43,25 @@
       autoplayTimeout: 10000,
       navText: [
         '<span class="icon-right-arrow left"></span>',
-        '<span class="icon-right-arrow"></span>'
+        '<span class="icon-right-arrow"></span>',
       ],
       responsive: {
         0: {
-          items: 1
+          items: 1,
         },
         600: {
-          items: 1
+          items: 1,
         },
         800: {
-          items: 1
+          items: 1,
         },
         1024: {
-          items: 1
+          items: 1,
         },
         1200: {
-          items: 1
-        }
-      }
+          items: 1,
+        },
+      },
     });
   }
 
@@ -49,25 +78,25 @@
       autoplayTimeout: 10000,
       navText: [
         '<span class="icon-right-arrow left"></span>',
-        '<span class="icon-right-arrow"></span>'
+        '<span class="icon-right-arrow"></span>',
       ],
       responsive: {
         0: {
-          items: 1
+          items: 1,
         },
         600: {
-          items: 1
+          items: 1,
         },
         800: {
-          items: 1
+          items: 1,
         },
         1024: {
-          items: 1
+          items: 1,
         },
         1200: {
-          items: 2
-        }
-      }
+          items: 2,
+        },
+      },
     });
   }
 
@@ -95,7 +124,7 @@
         slide: function (event, ui) {
           $(".price-ranger .ranger-min-max-block .min").val("$" + ui.values[0]);
           $(".price-ranger .ranger-min-max-block .max").val("$" + ui.values[1]);
-        }
+        },
       });
       $(".price-ranger .ranger-min-max-block .min").val(
         "$" + $(".price-ranger #slider-range").slider("values", 0)
@@ -109,7 +138,7 @@
   // Cart Touch Spin
   if ($(".quantity-spinner").length) {
     $("input.quantity-spinner").TouchSpin({
-      verticalbuttons: true
+      verticalbuttons: true,
     });
   }
 
@@ -157,7 +186,7 @@
       auto: "true",
       speed: "1000",
       pagerCustom:
-        ".bx_testimonial_slider .slider-pager .thumb-box, #testi-bx-pager"
+        ".bx_testimonial_slider .slider-pager .thumb-box, #testi-bx-pager",
     });
   }
 
@@ -200,8 +229,8 @@
       connect: true,
       range: {
         min: 10,
-        max: 200
-      }
+        max: 200,
+      },
     });
 
     var limitFieldMin = document.getElementById("min-value-rangeslider");
@@ -217,32 +246,34 @@
       // initialize the plugin
       rules: {
         name: {
-          required: true
+          required: true,
         },
         email: {
           required: true,
-          email: true
+          email: true,
         },
         message: {
-          required: true
+          required: true,
         },
         subject: {
-          required: true
-        }
+          required: true,
+        },
       },
       submitHandler: function (form) {
         // sending value with ajax request
-        $.post($(form).attr("action"), $(form).serialize(), function (
-          response
-        ) {
-          $(form).parent().find(".result").append(response);
-          $(form).find('input[type="text"]').val("");
-          $(form).find('input[type="email"]').val("");
-          $(form).find("textarea").val("");
-          console.log(response);
-        });
+        $.post(
+          $(form).attr("action"),
+          $(form).serialize(),
+          function (response) {
+            $(form).parent().find(".result").append(response);
+            $(form).find('input[type="text"]').val("");
+            $(form).find('input[type="email"]').val("");
+            $(form).find("textarea").val("");
+            console.log(response);
+          }
+        );
         return false;
-      }
+      },
     });
   }
 
@@ -301,7 +332,7 @@
       // animate
       $("html, body").animate(
         {
-          scrollTop: $(target).offset().top
+          scrollTop: $(target).offset().top,
         },
         1000
       );
@@ -330,7 +361,7 @@
       animateClass: "animated", // animation css class (default is animated)
       offset: 250, // distance to the element when triggering the animation (default is 0)
       mobile: true, // trigger animations on mobile devices (default is true)
-      live: true // act on asynchronously loaded content (default is true)
+      live: true, // act on asynchronously loaded content (default is true)
     });
     wow.init();
   }
@@ -349,7 +380,7 @@
           .stop()
           .animate(
             {
-              scrollTop: $(target.attr("href")).offset().top - headerH + "px"
+              scrollTop: $(target.attr("href")).offset().top - headerH + "px",
             },
             1200,
             "easeInOutExpo"
@@ -393,7 +424,7 @@
   if ($(".counter").length) {
     $(".counter").counterUp({
       delay: 10,
-      time: 3000
+      time: 3000,
     });
   }
 
@@ -408,10 +439,10 @@
         if (!$t.hasClass("counted")) {
           $t.addClass("counted");
           $({
-            countNum: $t.find(".count-text").text()
+            countNum: $t.find(".count-text").text(),
           }).animate(
             {
-              countNum: n
+              countNum: n,
             },
             {
               duration: r,
@@ -421,7 +452,7 @@
               },
               complete: function () {
                 $t.find(".count-text").text(this.countNum);
-              }
+              },
             }
           );
         }
@@ -448,8 +479,8 @@
         closeOnContentClick: true,
         closeBtnInside: false,
         gallery: {
-          enabled: true
-        }
+          enabled: true,
+        },
       });
     });
   }
@@ -462,7 +493,7 @@
       removalDelay: 160,
       preloader: true,
 
-      fixedContentPos: false
+      fixedContentPos: false,
     });
   }
 
@@ -487,82 +518,6 @@
     }
   });
 
-  // ===Project===
-  function projectMasonaryLayout() {
-    if ($(".masonary-layout").length) {
-      $(".masonary-layout").isotope({
-        layoutMode: "masonry"
-      });
-    }
-    if ($(".post-filter").length) {
-      $(".post-filter li")
-        .children(".filter-text")
-        .on("click", function () {
-          var Self = $(this);
-          var selector = Self.parent().attr("data-filter");
-          $(".post-filter li").removeClass("active");
-          Self.parent().addClass("active");
-          $(".filter-layout").isotope({
-            filter: selector,
-            animationOptions: {
-              duration: 500,
-              easing: "linear",
-              queue: false
-            }
-          });
-          return false;
-        });
-    }
-
-    if ($(".post-filter.has-dynamic-filters-counter").length) {
-      // var allItem = $('.single-filter-item').length;
-      var activeFilterItem = $(".post-filter.has-dynamic-filters-counter").find(
-        "li"
-      );
-      activeFilterItem.each(function () {
-        var filterElement = $(this).data("filter");
-        var count = $(".filter-layout").find(filterElement).length;
-        $(this)
-          .children(".filter-text")
-          .append('<span class="count">(' + count + ")</span>");
-      });
-    }
-  }
-  // mailchimp form
-  if ($(".mc-form").length) {
-    $(".mc-form").each(function () {
-      var Self = $(this);
-      var mcURL = Self.data("url");
-      var mcResp = Self.parent().find(".mc-form__response");
-
-      Self.ajaxChimp({
-        url: mcURL,
-        callback: function (resp) {
-          // appending response
-          mcResp.append(function () {
-            return '<p class="mc-message">' + resp.msg + "</p>";
-          });
-          // making things based on response
-          if (resp.result === "success") {
-            // Do stuff
-            Self.removeClass("errored").addClass("successed");
-            mcResp.removeClass("errored").addClass("successed");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-          if (resp.result === "error") {
-            Self.removeClass("successed").addClass("errored");
-            mcResp.removeClass("successed").addClass("errored");
-            Self.find("input").val("");
-
-            mcResp.find("p").fadeOut(10000);
-          }
-        }
-      });
-    });
-  }
-
   $(window).on("load", function () {
     if ($(".tour-details__gallery-thumb-carousel").length) {
       var testimonialsTwoThumbCarousel = new Swiper(
@@ -576,8 +531,8 @@
           watchSlidesProgress: true,
           loop: true,
           autoplay: {
-            delay: 5000
-          }
+            delay: 5000,
+          },
         }
       );
     }
@@ -616,12 +571,12 @@
     if ($(".side-menu__block-inner").length) {
       $(".side-menu__block-inner").mCustomScrollbar({
         axis: "y",
-        theme: "dark"
+        theme: "dark",
       });
     }
     if ($(".circlechart").length) {
       $(".circlechart").circlechart({
-        text: false
+        text: false,
       });
     }
 
@@ -645,17 +600,17 @@
           TweenMax.set(follower, {
             css: {
               left: posX - 22,
-              top: posY - 22
-            }
+              top: posY - 22,
+            },
           });
 
           TweenMax.set(cursor, {
             css: {
               left: mouseX,
-              top: mouseY
-            }
+              top: mouseY,
+            },
           });
-        }
+        },
       });
 
       $(document).on("mousemove", function (e) {
@@ -682,10 +637,6 @@
       });
     }
 
-    if ($(".preloader").length) {
-      $(".preloader").fadeOut();
-    }
-
     if ($(".countdown-one__list").length) {
       $(".countdown-one__list").countdown({
         date: "June 7, 2020 15:03:25",
@@ -703,12 +654,15 @@
             "<li> <div class='seconds'> <i>" +
             date.sec +
             "</i> <span>Seconds</span> </div> </li>";
-        }
+        },
       });
     }
 
     singleProductTab();
     priceFilter();
-    projectMasonaryLayout();
+  });
+
+  $(document).ready(function () {
+    $(".preloader").fadeOut();
   });
 })(jQuery);
