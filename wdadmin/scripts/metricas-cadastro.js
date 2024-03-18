@@ -72,6 +72,7 @@ function edita_metricas(viIdMetricas) {
                 $("#inputTitulo").val(data[0].titulo);
                 $("#inputNumero").val(data[0].numero);
                 $("#inputMedida").val(data[0].medida);
+                $("#inputIcone").val(data[0].icone);
                 $("#inputPosicao").val(data[0].posicao);
                 $("#inputStatus").val(data[0].status);
                 CloseLoading();

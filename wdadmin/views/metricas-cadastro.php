@@ -41,8 +41,12 @@
                                 <input type="hidden" id="inputIdMetricas" name="inputIdMetricas" value="<?php echo $id ?>" />
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label col-form-label-sm text-right">Título *</label>
-                                    <div class="col-sm-10">
+                                    <div class="col-sm-4">
                                         <input type="text" class="form-control form-control-sm" id="inputTitulo" name="inputTitulo" placeholder="ex.: Área construída" required>
+                                    </div>
+                                    <label class="col-sm-2 col-form-label col-form-label-sm text-right">Ícone *</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control form-control-sm" id="inputIcone" name="inputIcone" placeholder="ex.: fas fa-user" required>
                                     </div>
                                 </div>
                                 <div class="form-group row">

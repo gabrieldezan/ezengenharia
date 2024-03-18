@@ -60,7 +60,7 @@
                         </div>
                         <div class="col-xl-3 col-lg-3">
                             <div class="all_contact_info_single phone_info">
-                                <div class="icon"><span class="flaticon-telephone"></span></div>
+                                <div class="icon"><span class="fas fa-phone-volume"></span></div>
                                 <div class="content">
                                     <a href="<?php echo "tel:" . preg_replace("/[\s\W]+/", "", $voResultadoContatos->telefone) ?>"><?php echo $voResultadoContatos->telefone ?></a>
                                 </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-xl-5 col-lg-5">
                             <div class="all_contact_info_single location_info">
-                                <div class="icon"><span class="flaticon-pin"></span></div>
+                                <div class="icon"><span class="fas fa-map-marker-alt"></span></div>
                                 <div class="content">
                                     <?php if (!empty($voResultadoContatos->link)) { ?>
                                         <a target="_blank" href="<?php echo $voResultadoContatos->link ?>"><?php echo $voResultadoContatos->endereco . " - " . $voResultadoContatos->cidade . "-" . $voResultadoContatos->estado ?></a>
@@ -175,8 +175,6 @@
 
     </div>
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
     <?php
     // MENU MOBILE
     include 'php/menu-mobile.php';
@@ -184,6 +182,7 @@
     // CSS
     include 'php/css.php';
     ?>
+
     <link href="<?php echo URL . "wdadmin/assets/plugins/sweetalert/sweetalert.css" ?>" rel="stylesheet" type="text/css">
 
     <?php

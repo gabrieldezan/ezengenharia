@@ -1,9 +1,10 @@
 <div class="col-xl-4 col-lg-4">
     <div class="blog_details_sidebar">
         <div class="sidebar__single sidebar__search">
-            <form action="#" class="sidebar__search-form">
-                <input type="search" placeholder="Procure aqui...">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <form class="sidebar__search-form">
+                <input type="hidden" id="vsUrl" name="vsUrl" value="<?php echo URL ?>" />
+                <input type="search" id="campo_buscar_blog" name="campo_buscar_blog" placeholder="Procure aqui...">
+                <button id="botao_buscar_blog" type="button"><i class="fa fa-search"></i></button>
             </form>
         </div>
         <div class="sidebar__single sidebar__post">

@@ -167,7 +167,6 @@
                     include 'php/sidebar-blog.php';
                     ?>
                 </div>
-
             </div>
         </section>
 
@@ -177,8 +176,6 @@
         ?>
 
     </div>
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <?php
     // MENU MOBILE
@@ -191,7 +188,7 @@
     include 'php/scripts.php';
     ?>
 
-    <script src="<?php echo URL . "assets/js/posts.js" ?>"></script>
+    <script src="<?php echo URL . "assets/js/posts.min.js" ?>"></script>
 
 </body>
 

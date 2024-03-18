@@ -76,7 +76,6 @@ function edita_banner_slideshow(viIdBannersSlideshow) {
                 $("#inputImagemAtual").val(data[0].imagem);
                 $("#imgImagemAtual").attr("src", vsUrl + "uploads/banner/" + data[0].imagem);
                 $("#inputTitulo").val(data[0].titulo);
-                $("#inputDescricao").val(data[0].descricao);
                 $("#inputLink").val(data[0].link);
                 $("#inputTextoBotao").val(data[0].texto_botao);
                 $("#inputLinkNovaAba").val(data[0].link_nova_aba);

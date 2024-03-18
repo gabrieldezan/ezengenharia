@@ -18,7 +18,6 @@ if ($Arquivos->getErro() == 0 || $Arquivos->getErro() == 4) {
     $BannersSlideshow->setId_banner($_POST['inputIdBannersSlideshow']);
     $BannersSlideshow->setImagem($Arquivos->getRetorno_arquivo());
     $BannersSlideshow->setTitulo($_POST['inputTitulo']);
-    $BannersSlideshow->setDescricao($_POST['inputDescricao']);
     $BannersSlideshow->setLink($_POST['inputLink']);
     $BannersSlideshow->setTexto_botao($_POST['inputTextoBotao']);
     $BannersSlideshow->setLink_nova_aba($_POST['inputLinkNovaAba']);

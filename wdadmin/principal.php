@@ -258,6 +258,7 @@ if ($_COOKIE['wd_logado']):
                                         <li><a href="<?php echo URL ?>wdadmin/redes-sociais">Redes Sociais</a></li>
                                     </ul>
                                 </li>
+                                <li><a class="waves-effect waves-dark" href="<?php echo URL ?>wdadmin/metricas"><i class="mdi mdi-format-list-numbers"></i><span class="hide-menu">Métricas</span></a></li>
                                 <li>
                                     <a class="has-arrow waves-effect waves-dark" aria-expanded="false"><i class="mdi mdi-pencil"></i><span class="hide-menu">Conteúdo Personalizado</span></a>
                                     <ul id="lista_conteudo_personalizado" aria-expanded="false" class="collapse"></ul>

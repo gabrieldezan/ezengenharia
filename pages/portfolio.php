@@ -71,7 +71,7 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
                                 } else {
                                 ?>
                                     <li id="<?php echo $voResultadoCategoriasProjetos->url_amigavel ?>" data-filter="<?php echo "." . $voResultadoCategoriasProjetos->url_amigavel ?>"><span class="filter-text"><?php echo $voResultadoCategoriasProjetos->descricao ?></span></li>
-                            <?php
+                                <?php
                                 }
                             }
                             ?>
@@ -111,14 +111,14 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
                         ";
                         $vrsExecutaGrupos = mysqli_query($Conexao, $vsSqlGrupos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                         while ($voResultadoGrupos = mysqli_fetch_object($vrsExecutaGrupos)) {
-                    ?>
+                        ?>
                             <div class="col-xl-4 col-lg-4 col-md-6 col-6 todos <?php echo $voResultadoGrupos->grupos ?>">
                                 <div class="our_projects_one_single">
                                     <div class="our_projects_one_image">
                                         <img src="<?php echo URL . "wdadmin/uploads/galeria_imagem/" . $imagemProjetosThumb ?>" title="<?php echo $voResultadoProjetos->titulo ?>" alt="<?php echo $voResultadoProjetos->titulo ?>">
                                         <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>">
                                             <div class="our_projects_one_icon">
-                                                <span class="flaticon-plus"></span>
+                                                <span class="far fa-plus"></span>
                                             </div>
                                         </a>
                                         <div class="our_projects_one_text">
@@ -130,7 +130,7 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
                                     </div>
                                 </div>
                             </div>
-                    <?php
+                        <?php
                         }
                     }
                     ?>
@@ -144,8 +144,6 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
         ?>
 
     </div>
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <?php
     // MENU MOBILE
@@ -170,13 +168,15 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
                 var applyFilter = function(selector) {
                     $(".post-filter li").removeClass("active");
                     $(".post-filter li[data-filter='" + selector + "']").addClass("active");
-                    $(".filter-layout").isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 500,
-                            easing: "linear",
-                            queue: false,
-                        },
+                    $(".filter-layout").imagesLoaded(function() {
+                        $(".filter-layout").isotope({
+                            filter: selector,
+                            animationOptions: {
+                                duration: 500,
+                                easing: "linear",
+                                queue: false,
+                            },
+                        });
                     });
                 };
 
@@ -204,17 +204,6 @@ $checa_grupo .= $_GET["grupo"] != "" ? " AND gi.id_galeria_imagem IN (SELECT ig.
                 var filterItems = $(".post-filter li");
                 filterItems.each(function() {
                     var filterElement = $(this).attr("data-filter");
-                    var count = $(".filter-layout").find(filterElement).length;
-
-                    // Limpar o conteúdo existente antes de adicionar o contador
-                    $(this).children(".filter-text").find(".count").remove();
-
-                    // Adicionar o contador apenas se houver mais de 0 itens
-                    if (count > 0) {
-                        $(this)
-                            .children(".filter-text")
-                            .append('<span class="count">(' + count + ")</span>");
-                    }
                 });
             }
         }

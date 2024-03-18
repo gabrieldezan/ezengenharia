@@ -9,6 +9,7 @@ class Metricas extends Conexao {
     private $titulo;
     private $numero;
     private $medida;
+    private $icone;
     private $posicao;
     private $status;
     private $retorno_dados;
@@ -26,9 +27,11 @@ class Metricas extends Conexao {
                         titulo,
                         numero,
                         medida,
+                        icone,
                         posicao,
                         status
                     ) VALUES (
+                        ?,
                         ?,
                         ?,
                         ?,
@@ -40,6 +43,7 @@ class Metricas extends Conexao {
                     "$this->titulo",
                     "$this->numero",
                     "$this->medida",
+                    "$this->icone",
                     "$this->posicao",
                     "$this->status"
                 ));
@@ -50,6 +54,7 @@ class Metricas extends Conexao {
                         titulo = ?,
                         numero = ?,
                         medida = ?,
+                        icone = ?,
                         posicao = ?,
                         status = ?
                     WHERE 
@@ -59,6 +64,7 @@ class Metricas extends Conexao {
                     "$this->titulo",
                     "$this->numero",
                     "$this->medida",
+                    "$this->icone",
                     "$this->posicao",
                     "$this->status",
                     "$this->id_metricas"
@@ -122,6 +128,7 @@ class Metricas extends Conexao {
                     titulo,
                     numero,
                     medida,
+                    icone,
                     posicao,
                     status
                 FROM
@@ -162,6 +169,10 @@ class Metricas extends Conexao {
         return $this->medida;
     }
 
+    function getIcone() {
+        return $this->icone;
+    }
+
     function getPosicao() {
         return $this->posicao;
     }
@@ -188,6 +199,10 @@ class Metricas extends Conexao {
 
     function setMedida($medida) {
         $this->medida = $medida;
+    }
+
+    function setIcone($icone) {
+        $this->icone = $icone;
     }
 
     function setPosicao($posicao) {

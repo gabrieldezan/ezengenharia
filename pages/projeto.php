@@ -101,8 +101,8 @@ if ($vrsQntProjeto > 0) {
                                         </div>
                                         <div class="swiper-pagination projeto" id="main-slider-pagination" style="color:black;"></div>
                                         <div class="banner-slider-nav">
-                                            <div class="banner-slider-button-prev projeto-prev"><span class="flaticon-right-arrow"></span></div>
-                                            <div class="banner-slider-button-next projeto-next"><span class="flaticon-right-arrow"></span> </div>
+                                            <div class="banner-slider-button-prev projeto-prev"><span class="far fa-long-arrow-alt-right"></span></div>
+                                            <div class="banner-slider-button-next projeto-next"><span class="far fa-long-arrow-alt-right"></span> </div>
                                         </div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ if ($vrsQntProjeto > 0) {
                                     $vrsExecutaCategoriasProjetos = mysqli_query($Conexao, $vsSqlCategoriasProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                                     while ($voResultadoCategoriasProjetos = mysqli_fetch_object($vrsExecutaCategoriasProjetos)) {
                                     ?>
-                                        <li><a href="<?php echo URL . "portfolio" ?>"><?php echo $voResultadoCategoriasProjetos->descricao ?><span class="flaticon-right-arrow"></span></a></li>
+                                        <li><a href="<?php echo URL . "portfolio" ?>"><?php echo $voResultadoCategoriasProjetos->descricao ?><span class="far fa-long-arrow-alt-right"></span></a></li>
                                     <?php
                                     }
                                     ?>
@@ -167,8 +167,6 @@ if ($vrsQntProjeto > 0) {
             ?>
 
         </div>
-
-        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
         <?php
         // MENU MOBILE

@@ -57,12 +57,6 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label col-form-label-sm text-right">Descrição</label>
-                                    <div class="col-sm-8">
-                                        <input type="text" class="form-control form-control-sm" id="inputDescricao" name="inputDescricao" placeholder="Descrição do banner" />
-                                    </div>
-                                </div>
-                                <div class="form-group row">
                                     <label class="col-sm-3 col-form-label col-form-label-sm text-right">Link</label>
                                     <div class="col-sm-8">
                                         <input type="text" class="form-control form-control-sm" id="inputLink" name="inputLink" placeholder="Link da ação do botão" />

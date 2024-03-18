@@ -5,7 +5,7 @@
                 <div class="footer-widget__column footer-widget__about wow fadeInUp animated" data-wow-delay="100ms">
                     <div class="footer-widget__about_logo">
                         <a href="<?php echo URL ?>">
-                            <img src="<?php echo URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" title="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo $voResultadoConfiguracoes->nome_empresa ?>">
+                            <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" title="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" width="85" height="70">
                         </a>
                     </div>
                     <?php
@@ -99,7 +99,7 @@
                             </li>
                             <li>
                                 <div class="footer-widget_about_icon">
-                                    <span class="flaticon-telephone"></span>
+                                    <span class="fas fa-phone-volume"></span>
                                 </div>
                                 <div class="footer-widget_about_text">
                                     <a href="<?php echo "tel:55" . preg_replace("/[\s\W]+/", "", $voResultadoContatos->telefone) ?>"><?php echo $voResultadoContatos->telefone ?></a>
@@ -120,13 +120,15 @@
         </div>
         <div>
             <a href="https://webdezan.com.br/" target="_blank">
-                <img src="<?php echo URL . "assets/images/webdezan.webp" ?>" title="Web Dezan - Agência Digital" alt="Web Dezan - Agência Digital">
+                <img loading="lazy" src="<?php echo URL . "assets/images/webdezan.webp" ?>" title="Web Dezan - Agência Digital" alt="Web Dezan - Agência Digital" width="120" height="20">
             </a>
         </div>
     </div>
 </div>
 <div class="button-go-top">
     <a href="<?php echo "https://wa.me/55" . preg_replace("/[\s\W]+/", "", $voResultadoConfiguracoes->whatsapp) ?>" target="_blank" title="Whatsapp" class="go-top show">
-        <img src="<?php echo URL . "assets/images/whatsapp.png" ?>" title="WhatsApp" alt="WhatsApp">
+        <img src="<?php echo URL . "assets/images/whatsapp.webp" ?>" title="WhatsApp" alt="WhatsApp" width="65" height="65">
     </a>
 </div>
+
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>

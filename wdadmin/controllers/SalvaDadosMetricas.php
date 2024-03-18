@@ -7,6 +7,7 @@ $Metricas->setId_Metricas($_POST['inputIdMetricas']);
 $Metricas->setTitulo($_POST['inputTitulo']);
 $Metricas->setNumero($_POST['inputNumero']);
 $Metricas->setMedida($_POST['inputMedida']);
+$Metricas->setIcone($_POST['inputIcone']);
 $Metricas->setPosicao($_POST['inputPosicao']);
 $Metricas->setStatus($_POST['inputStatus']);
 

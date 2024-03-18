@@ -50,7 +50,7 @@
                                                     <a target="_blank" href="<?php echo $voResultadoBanner->link ?>" class="thm-btn"><?php echo $voResultadoBanner->texto_botao ?></a>
                                                 <?php } else if ($voResultadoBanner->link_nova_aba == 0) { ?>
                                                     <a href="<?php echo $voResultadoBanner->link ?>" class="thm-btn"><?php echo $voResultadoBanner->texto_botao ?></a>
-                                            <?php
+                                                <?php
                                                 }
                                             }
                                             ?>
@@ -65,8 +65,8 @@
                 </div>
                 <div class="swiper-pagination" id="main-slider-pagination"></div>
                 <div class="banner-slider-nav">
-                    <div class="banner-slider-button-prev"><span class="flaticon-right-arrow"></span></div>
-                    <div class="banner-slider-button-next"><span class="flaticon-right-arrow"></span> </div>
+                    <div class="banner-slider-button-prev"><span class="far fa-long-arrow-alt-right"></span></div>
+                    <div class="banner-slider-button-next"><span class="far fa-long-arrow-alt-right"></span></div>
                 </div>
             </div>
         </section>
@@ -78,9 +78,13 @@
                     $vsSqlTituloAreasAtuacao = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 8";
                     $vrsExecutaTituloAreasAtuacao = mysqli_query($Conexao, $vsSqlTituloAreasAtuacao) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoTituloAreasAtuacao = mysqli_fetch_object($vrsExecutaTituloAreasAtuacao)) {
-                    ?>
-                        <h4><?php echo $voResultadoTituloAreasAtuacao->titulo ?></h4>
-                        <h2><?php echo $voResultadoTituloAreasAtuacao->subtitulo ?></h2>
+                        if (!empty($voResultadoTituloAreasAtuacao->subtitulo)) {
+                        ?>
+                            <h4><?php echo $voResultadoTituloAreasAtuacao->subtitulo ?></h4>
+                        <?php
+                        }
+                        ?>
+                        <h2><?php echo $voResultadoTituloAreasAtuacao->titulo ?></h2>
                     <?php
                     }
                     ?>
@@ -100,8 +104,8 @@
                         } else {
                             $numeroItens = 4;
                         }
-                    ?>
-                        <div class="<?php echo "col-xl-" . $numeroItens . " col-lg-" . $numeroItens ?>">
+                        ?>
+                        <div class="<?php echo "col-6 col-xl-" . $numeroItens . " col-lg-" . $numeroItens ?>">
                             <div class="our_services_one_single wow fadeInUp">
                                 <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoAreasAtuacao->icone) . '"></i>'; ?>
                                 <div class="our_services_one_content">
@@ -117,22 +121,25 @@
             </div>
         </section>
 
-        <section class="counter_two three" style="background-image: url(<?php echo URL . 'assets/images/resources/counter_two_bg.jpg' ?>)">
+        <section class="counter_two three" style="background-image: url(<?php echo URL . 'assets/images/counter_two_bg.webp' ?>)">
             <div class="container">
                 <ul class="counter_two_box list-unstyled">
                     <?php
-                    $vsSqlMetricas = "SELECT titulo, numero, medida FROM metricas WHERE status = 1";
+                    $vsSqlMetricas = "SELECT titulo, numero, medida, icone FROM metricas WHERE status = 1";
                     $vrsExecutaMetricas = mysqli_query($Conexao, $vsSqlMetricas) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoMetricas = mysqli_fetch_object($vrsExecutaMetricas)) {
                     ?>
                         <div class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                            <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoMetricas->icone) . '"></i>' ?>
                             <h2>
                                 <span class="counter"><?php echo $voResultadoMetricas->numero ?></span>
                                 <?php if (!empty($voResultadoMetricas->medida)) {
                                     echo $voResultadoMetricas->medida;
                                 } ?>
                             </h2>
-                            <p><?php echo $voResultadoMetricas->titulo ?></p>
+                            <div class="titulo-metrica">
+                                <p><?php echo $voResultadoMetricas->titulo ?></p>
+                            </div>
                         </div>
                     <?php
                     }
@@ -150,9 +157,13 @@
                             $vsSqlTituloParceiros = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 9";
                             $vrsExecutaTituloParceiros = mysqli_query($Conexao, $vsSqlTituloParceiros) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                             while ($voResultadoTituloParceiros = mysqli_fetch_object($vrsExecutaTituloParceiros)) {
-                            ?>
-                                <h4><?php echo $voResultadoTituloParceiros->titulo ?></h4>
-                                <h2><?php echo $voResultadoTituloParceiros->subtitulo ?></h2>
+                                if (!empty($voResultadoTituloParceiros->subtitulo)) {
+                                ?>
+                                    <h4><?php echo $voResultadoTituloParceiros->subtitulo ?></h4>
+                                <?php
+                                }
+                                ?>
+                                <h2><?php echo $voResultadoTituloParceiros->titulo ?></h2>
                             <?php
                             }
                             ?>
@@ -162,17 +173,17 @@
                 <div class="row">
                     <div class="brand-one__carousel owl-carousel thm__owl-carousel owl-theme" data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 2000, "items": 5, "dots": false, "nav": false, "margin": 140, "smartSpeed": 700, "responsive": { "0": {"items": 1, "margin": 30}, "480": {"items": 3, "margin": 30}, "991": {"items": 4, "margin": 50}, "1199": {"items": 4, "margin": 100}}}'>
                         <?php
-                        $vsSqlParceiros = "SELECT titulo, imagem, link FROM informacoes WHERE id_conteudo_personalizado = 11";
+                        $vsSqlParceiros = "SELECT i.titulo, i.imagem, i.link, cp.imagem_largura, cp.imagem_altura FROM informacoes i, conteudo_personalizado cp WHERE i.id_conteudo_personalizado = 11 AND cp.id_conteudo_personalizado = 11";
                         $vrsExecutaParceiros = mysqli_query($Conexao, $vsSqlParceiros) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                         while ($voResultadoParceiros = mysqli_fetch_object($vrsExecutaParceiros)) {
                         ?>
                             <div class="item">
                                 <?php if (!empty($voResultadoParceiros->link)) { ?>
                                     <a target="_blank" href="<?php echo $voResultadoParceiros->link ?>">
-                                        <img src="<?php echo URL . "wdadmin/uploads/informacoes/" . $voResultadoParceiros->imagem ?>" title="<?php echo $voResultadoParceiros->titulo ?>" alt="<?php echo $voResultadoParceiros->titulo ?>">
+                                        <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/informacoes/" . $voResultadoParceiros->imagem ?>" title="<?php echo $voResultadoParceiros->titulo ?>" alt="<?php echo $voResultadoParceiros->titulo ?>" width="<?php echo $voResultadoParceiros->imagem_largura ?>" height="<?php echo $voResultadoParceiros->imagem_altura ?>">
                                     </a>
                                 <?php } else { ?>
-                                    <img src="<?php echo URL . "wdadmin/uploads/informacoes/" . $voResultadoParceiros->imagem ?>" title="<?php echo $voResultadoParceiros->titulo ?>" alt="<?php echo $voResultadoParceiros->titulo ?>">
+                                    <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/informacoes/" . $voResultadoParceiros->imagem ?>" title="<?php echo $voResultadoParceiros->titulo ?>" alt="<?php echo $voResultadoParceiros->titulo ?>" width="<?php echo $voResultadoParceiros->imagem_largura ?>" height="<?php echo $voResultadoParceiros->imagem_altura ?>">
                                 <?php } ?>
                             </div>
                         <?php
@@ -185,110 +196,108 @@
 
         <section class="our_projects_one">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-6">
-                        <div class="block-title text-left">
+                <div class="block-title text-center">
+                    <?php
+                    $vsSqlTituloProjetos = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 10";
+                    $vrsExecutaTituloProjetos = mysqli_query($Conexao, $vsSqlTituloProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
+                    while ($voResultadoTituloProjetos = mysqli_fetch_object($vrsExecutaTituloProjetos)) {
+                        if (!empty($voResultadoTituloProjetos->subtitulo)) {
+                        ?>
+                            <h4><?php echo $voResultadoTituloProjetos->subtitulo ?></h4>
+                        <?php
+                        }
+                        ?>
+                        <h2><?php echo $voResultadoTituloProjetos->titulo ?></h2>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="owl-carousel thm__owl-carousel owl-theme" data-options='{"loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 1500, "items": 3, "dots": false, "nav": false, "margin": 140, "smartSpeed": 700, "responsive": { "0": {"items": 2, "margin": 30}, "480": {"items": 2, "margin": 30}, "991": {"items": 2, "margin": 50}, "1199": {"items": 3, "margin": 70}}}'>
                             <?php
-                            $vsSqlTituloProjetos = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 10";
-                            $vrsExecutaTituloProjetos = mysqli_query($Conexao, $vsSqlTituloProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
-                            while ($voResultadoTituloProjetos = mysqli_fetch_object($vrsExecutaTituloProjetos)) {
-                            ?>
-                                <h4><?php echo $voResultadoTituloProjetos->titulo ?></h4>
-                                <h2><?php echo $voResultadoTituloProjetos->subtitulo ?></h2>
-                            <?php
+                            $vsSqlProjetos = "
+                                SELECT
+                                    gi.id_galeria_imagem,
+                                    gi.titulo,
+                                    gi.imagem1,
+                                    ti.largura_thumb,
+                                    ti.altura_thumb,
+                                    CONCAT(gi.url_amigavel, '-', gi.id_galeria_imagem) AS url_projeto
+                                FROM
+                                    galeria_imagem gi,
+                                    tamanho_imagens ti
+                                WHERE
+                                    ti.id_tamanho_imagens = 10
+                                ORDER BY
+                                    rand()
+                                LIMIT 9
+                            ";
+                            $vrsExecutaProjetos = mysqli_query($Conexao, $vsSqlProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
+                            while ($voResultadoProjetos = mysqli_fetch_object($vrsExecutaProjetos)) {
+                                $imagemProjetos = explode(".", $voResultadoProjetos->imagem1);
+                                    if (file_exists("wdadmin/uploads/galeria_imagem/" . $imagemProjetos[0] . "-thumb.webp")) {
+                                        $imagemProjetosThumb = $imagemProjetos[0] . "-thumb.webp";
+                                    } else {
+                                        $imagemProjetosThumb = $voResultadoProjetos->imagem1;
+                                    }
+                                $vsSqlGrupos = "
+                                    SELECT
+                                        GROUP_CONCAT(DISTINCT gg.descricao SEPARATOR ' / ') AS descricao_grupos
+                                    FROM
+                                        galeria_grupo gg
+                                        LEFT JOIN imagens_grupos ig ON ig.id_galeria_grupos = gg.id_galeria_grupo
+                                    WHERE
+                                        ig.id_galeria_imagem = $voResultadoProjetos->id_galeria_imagem
+                                ";
+                                $vrsExecutaGrupos = mysqli_query($Conexao, $vsSqlGrupos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
+                                while ($voResultadoGrupos = mysqli_fetch_object($vrsExecutaGrupos)) {
+                                ?>
+                                    <div class="item">
+                                        <div class="our_projects_one_single">
+                                            <div class="our_projects_one_image">
+                                                <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/galeria_imagem/" . $imagemProjetosThumb ?>" title="<?php echo $voResultadoProjetos->titulo ?>" alt="<?php echo $voResultadoProjetos->titulo ?>" width="<?php echo $voResultadoProjetos->largura_thumb ?>" height="<?php echo $voResultadoProjetos->altura_thumb ?>">
+                                                <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>" title="<?php echo "Visualizar " . $voResultadoProjetos->titulo ?>">
+                                                    <div class="our_projects_one_icon">
+                                                        <span class="far fa-plus"></span>
+                                                    </div>
+                                                </a>
+                                                <div class="our_projects_one_text">
+                                                    <h4>
+                                                        <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>"><?php echo $voResultadoProjetos->titulo ?></a>
+                                                    </h4>
+                                                    <span><?php echo $voResultadoGrupos->descricao_grupos ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php
+                                }
                             }
                             ?>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                        <ul class="project-filter style1 post-filter has-dynamic-filters-counter list-unstyled">
-                            <li data-filter=".todos" class="active"><span class="filter-text">Todos</span></li>
-                            <?php
-                            $vsSqlCategoriasProjetos = "SELECT descricao, url_amigavel FROM galeria_grupo WHERE status = 1";
-                            $vrsExecutaCategoriasProjetos = mysqli_query($Conexao, $vsSqlCategoriasProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
-                            while ($voResultadoCategoriasProjetos = mysqli_fetch_object($vrsExecutaCategoriasProjetos)) {
-                            ?>
-                                <li data-filter="<?php echo "." . $voResultadoCategoriasProjetos->url_amigavel ?>"><span class="filter-text"><?php echo $voResultadoCategoriasProjetos->descricao ?></span></li>
-                            <?php
-                            }
-                            ?>
-                        </ul>
+                    <div class="row justify-content-center">
+                        <a class="thm-btn" href="<?php echo URL . "portfolio" ?>">Ver mais</a>
                     </div>
-                </div>
-                <div class="row filter-layout masonary-layout">
-                    <?php
-                    $vsSqlProjetos = "
-                        SELECT
-                            id_galeria_imagem,
-                            titulo,
-                            imagem1,
-                            CONCAT(url_amigavel, '-', id_galeria_imagem) AS url_projeto
-                        FROM
-                            galeria_imagem
-                        ORDER BY
-                            rand()
-                        LIMIT 9
-                    ";
-                    $vrsExecutaProjetos = mysqli_query($Conexao, $vsSqlProjetos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
-                    while ($voResultadoProjetos = mysqli_fetch_object($vrsExecutaProjetos)) {
-                        $imagemProjetos = explode(".", $voResultadoProjetos->imagem1);
-                        if (file_exists("wdadmin/uploads/galeria_imagem/" . $imagemProjetos[0] . "-thumb.webp")) {
-                            $imagemProjetosThumb = $imagemProjetos[0] . "-thumb.webp";
-                        } else {
-                            $imagemProjetosThumb = $voResultadoProjetos->imagem1;
-                        }
-                        $vsSqlGrupos = "
-                            SELECT
-                                GROUP_CONCAT(DISTINCT gg.url_amigavel SEPARATOR ' ') AS grupos,
-                                GROUP_CONCAT(DISTINCT gg.descricao SEPARATOR ' / ') AS descricao_grupos
-                            FROM
-                                galeria_grupo gg
-                                LEFT JOIN imagens_grupos ig ON ig.id_galeria_grupos = gg.id_galeria_grupo
-                            WHERE
-                                ig.id_galeria_imagem = $voResultadoProjetos->id_galeria_imagem
-                        ";
-                        $vrsExecutaGrupos = mysqli_query($Conexao, $vsSqlGrupos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
-                        while ($voResultadoGrupos = mysqli_fetch_object($vrsExecutaGrupos)) {
-                    ?>
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-6 todos <?php echo $voResultadoGrupos->grupos ?>">
-                                <div class="our_projects_one_single">
-                                    <div class="our_projects_one_image">
-                                        <img src="<?php echo URL . "wdadmin/uploads/galeria_imagem/" . $imagemProjetosThumb ?>" title="<?php echo $voResultadoProjetos->titulo ?>" alt="<?php echo $voResultadoProjetos->titulo ?>">
-                                        <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>">
-                                            <div class="our_projects_one_icon">
-                                                <span class="flaticon-plus"></span>
-                                            </div>
-                                        </a>
-                                        <div class="our_projects_one_text">
-                                            <h4>
-                                                <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>"><?php echo $voResultadoProjetos->titulo ?></a>
-                                            </h4>
-                                            <span><?php echo $voResultadoGrupos->descricao_grupos ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                </div>
-                <div class="row justify-content-center">
-                    <a class="thm-btn" href="<?php echo URL . "portfolio" ?>">Ver mais</a>
                 </div>
             </div>
         </section>
 
-        <section class="testimonails_two" style="background-image: url(<?php echo URL . 'assets/images/testimonials/testimonails_2-bg.jpg' ?>)">
+        <section class="testimonails_two" style="background-image: url(<?php echo URL . 'assets/images/testimonails_2-bg.webp' ?>)">
             <div class="container">
                 <div class="block-title text-center">
                     <?php
                     $vsSqlTituloClientes = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 11";
                     $vrsExecutaTituloClientes = mysqli_query($Conexao, $vsSqlTituloClientes) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoTituloClientes = mysqli_fetch_object($vrsExecutaTituloClientes)) {
-                    ?>
-                        <h4><?php echo $voResultadoTituloClientes->titulo ?></h4>
-                        <h2><?php echo $voResultadoTituloClientes->subtitulo ?></h2>
+                        if (!empty($voResultadoTituloClientes->subtitulo)) {
+                        ?>
+                            <h4><?php echo $voResultadoTituloClientes->subtitulo ?></h4>
+                        <?php
+                        }
+                        ?>
+                        <h2><?php echo $voResultadoTituloClientes->titulo ?></h2>
                     <?php
                     }
                     ?>
@@ -298,7 +307,7 @@
                         <div class="thm-swiper__slider swiper-container" data-swiper-options='{"loop": true, "spaceBetween": 100, "slidesPerView": 4, "autoplay": { "delay": 2000 }, "breakpoints": { "0": { "spaceBetween": 0, "slidesPerView": 1 }, "425": { "spaceBetween": 0, "slidesPerView": 1 }, "575": { "spaceBetween": 30, "slidesPerView": 2 }, "767": { "spaceBetween": 30, "slidesPerView": 2 }, "991": { "spaceBetween": 20, "slidesPerView": 2 }, "1289": { "spaceBetween": 20, "slidesPerView": 2 }, "1440": { "spaceBetween": 20, "slidesPerView": 2 } }}'>
                             <div class="swiper-wrapper">
                                 <?php
-                                $vsSqlDepoimentos = "SELECT nome, texto, empresa, imagem FROM depoimentos ORDER BY rand()";
+                                $vsSqlDepoimentos = "SELECT d.nome, d.texto, d.empresa, d.imagem, ti.largura, ti.altura FROM depoimentos d, tamanho_imagens ti WHERE ti.id_tamanho_imagens = 9 ORDER BY rand()";
                                 $vrsExecutaDepoimentos = mysqli_query($Conexao, $vsSqlDepoimentos) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                                 while ($voResultadoDepoimentos = mysqli_fetch_object($vrsExecutaDepoimentos)) {
                                 ?>
@@ -315,7 +324,7 @@
                                                 <?php } ?>
                                             </div>
                                             <div class="testimonails_two_image">
-                                                <img src="<?php echo URL . "wdadmin/uploads/depoimentos/" . $voResultadoDepoimentos->imagem ?>" title="<?php echo $voResultadoDepoimentos->nome ?>" alt="<?php echo $voResultadoDepoimentos->nome ?>">
+                                                <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/depoimentos/" . $voResultadoDepoimentos->imagem ?>" title="<?php echo $voResultadoDepoimentos->nome ?>" alt="<?php echo $voResultadoDepoimentos->nome ?>" width="<?php echo $voResultadoDepoimentos->largura ?>" height="<?php echo $voResultadoDepoimentos->altura ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -330,18 +339,18 @@
         </section>
 
         <section class="welcome_one">
-            <div class="welcome_one_shape_bg" style="background-image: url(<?php echo URL . 'assets/images/resources/welcome_one_shape-bg.png' ?>)"></div>
+            <div class="welcome_one_shape_bg" style="background-image: url(<?php echo URL . 'assets/images/welcome_one_shape-bg.webp' ?>)"></div>
             <div class="container">
                 <div class="row">
                     <?php
-                    $vsSqlSobre = "SELECT imagem, texto FROM sobre";
+                    $vsSqlSobre = "SELECT s.imagem, s.texto, ti.largura, ti.altura FROM sobre s, tamanho_imagens ti WHERE ti.id_tamanho_imagens = 2";
                     $vrsExecutaSobre = mysqli_query($Conexao, $vsSqlSobre) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoSobre = mysqli_fetch_object($vrsExecutaSobre)) {
                     ?>
                         <div class="col-xl-6">
                             <div class="welcome_one_left">
                                 <div class="welcome_one_left_image">
-                                    <img src="<?php echo URL . "wdadmin/uploads/sobre/" . $voResultadoSobre->imagem ?>" title="<?php echo "Sobre a " . $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo "Sobre a " . $voResultadoConfiguracoes->nome_empresa ?>">
+                                    <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/sobre/" . $voResultadoSobre->imagem ?>" title="<?php echo "Sobre a " . $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo "Sobre a " . $voResultadoConfiguracoes->nome_empresa ?>" width="<?php echo $voResultadoSobre->largura ?>" height="<?php echo $voResultadoSobre->altura ?>">
                                 </div>
                             </div>
                         </div>
@@ -352,9 +361,13 @@
                                     $vsSqlTituloSobre = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 12";
                                     $vrsExecutaTituloSobre = mysqli_query($Conexao, $vsSqlTituloSobre) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                                     while ($voResultadoTituloSobre = mysqli_fetch_object($vrsExecutaTituloSobre)) {
-                                    ?>
-                                        <h4><?php echo $voResultadoTituloSobre->titulo ?></h4>
-                                        <h2><?php echo $voResultadoTituloSobre->subtitulo ?></h2>
+                                        if (!empty($voResultadoTituloSobre->subtitulo)) {
+                                        ?>
+                                            <h4><?php echo $voResultadoTituloSobre->subtitulo ?></h4>
+                                        <?php
+                                        }
+                                        ?>
+                                        <h2><?php echo $voResultadoTituloSobre->titulo ?></h2>
                                     <?php
                                     }
                                     ?>
@@ -376,7 +389,7 @@
         $vrsExecutaCountBlog = mysqli_query($Conexao, $vsSqlCountBlog) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
         while ($voResultadoCountBlog = mysqli_fetch_object($vrsExecutaCountBlog)) {
             if ($voResultadoCountBlog->numero_posts > 0) {
-        ?>
+            ?>
                 <section class="blog_one">
                     <div class="container">
                         <div class="block-title text-center">
@@ -384,9 +397,13 @@
                             $vsSqlTituloBlog = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 13";
                             $vrsExecutaTituloBlog = mysqli_query($Conexao, $vsSqlTituloBlog) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                             while ($voResultadoTituloBlog = mysqli_fetch_object($vrsExecutaTituloBlog)) {
+                                if (!empty($voResultadoTituloBlog->subtitulo)) {
                             ?>
-                                <h4><?php echo $voResultadoTituloBlog->titulo ?></h4>
-                                <h2><?php echo $voResultadoTituloBlog->subtitulo ?></h2>
+                                    <h4><?php echo $voResultadoTituloBlog->subtitulo ?></h4>
+                                <?php
+                                }
+                                ?>
+                                <h2><?php echo $voResultadoTituloBlog->titulo ?></h2>
                             <?php
                             }
                             ?>
@@ -415,9 +432,12 @@
                                         WHEN 'November' THEN 'Nov'
                                         WHEN 'December' THEN 'Dez'
                                     END AS mes_publicacao,
-                                    DATE_FORMAT(data_publicacao, '%Y') AS ano_publicacao
+                                    DATE_FORMAT(data_publicacao, '%Y') AS ano_publicacao,
+                                    ti.largura_thumb,
+                                    ti.altura_thumb
                                 FROM
-                                    blog_postagem bp
+                                    blog_postagem bp,
+                                    tamanho_imagens ti
                                     LEFT JOIN autores a ON bp.id_autores = a.id_autores
                                 WHERE
                                     bp.status = 1 AND
@@ -434,11 +454,11 @@
                                 } else {
                                     $imagemBlogThumb = $voResultadoBlogHome->imagem;
                                 }
-                            ?>
+                                ?>
                                 <div class="col-xl-4 col-lg-4">
                                     <div class="blog_one_single wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
                                         <div class="blog_one_image">
-                                            <img src="<?php echo URL . "wdadmin/uploads/blog_postagem/" . $imagemBlogThumb ?>" title="<?php echo $voResultadoBlogHome->titulo ?>" alt="<?php echo $voResultadoBlogHome->titulo ?>">
+                                            <img src="<?php echo URL . "wdadmin/uploads/blog_postagem/" . $imagemBlogThumb ?>" title="<?php echo $voResultadoBlogHome->titulo ?>" alt="<?php echo $voResultadoBlogHome->titulo ?>" width="<?php echo $voResultadoBlogHome->largura_thumb ?>" height="<?php echo $voResultadoBlogHome->altura_thumb ?>">
                                             <div class="blog_one_date_box">
                                                 <p><?php echo $voResultadoBlogHome->dia_publicacao ?><br><?php echo $voResultadoBlogHome->mes_publicacao ?><br><?php echo $voResultadoBlogHome->ano_publicacao ?></p>
                                             </div>
@@ -459,7 +479,7 @@
                         </div>
                     </div>
                 </section>
-        <?php
+            <?php
             }
         }
 
@@ -468,8 +488,6 @@
         ?>
 
     </div>
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <?php
     // MENU MOBILE
@@ -484,58 +502,30 @@
 
     <script>
         function projectMasonaryLayout() {
-            if ($(".masonry-layout").length) {
-                $(".masonry-layout").isotope({
-                    layoutMode: "masonry",
-                });
-            }
-
-            if ($(".post-filter").length) {
-                var applyFilter = function(selector) {
-                    $(".post-filter li").removeClass("active");
-                    $(".post-filter li[data-filter='" + selector + "']").addClass("active");
-                    $(".filter-layout").isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 500,
-                            easing: "linear",
-                            queue: false,
-                        },
-                    });
+            if ($(".masonry-layout").length && $(".masonry-layout").isotope({
+                    layoutMode: "masonry"
+                }), $(".post-filter").length) {
+                var t = function(t) {
+                    $(".post-filter li").removeClass("active"), $(".post-filter li[data-filter='" + t + "']").addClass("active"), $(".filter-layout").imagesLoaded(function() {
+                        $(".filter-layout").isotope({
+                            filter: t,
+                            animationOptions: {
+                                duration: 500,
+                                easing: "linear",
+                                queue: !1
+                            }
+                        })
+                    })
                 };
-
-                $(".post-filter li")
-                    .children(".filter-text")
-                    .on("click", function() {
-                        var Self = $(this);
-                        var selector = Self.parent().attr("data-filter");
-                        applyFilter(selector);
-                        return false;
-                    });
-
-                var defaultFilter = ".todos";
-                applyFilter(defaultFilter);
+                $(".post-filter li").children(".filter-text").on("click", function() {
+                    var a = $(this).parent().attr("data-filter");
+                    return t(a), !1
+                }), t(".todos")
             }
-
-            if ($(".post-filter.has-dynamic-filters-counter").length) {
-                var filterItems = $(".post-filter li");
-                filterItems.each(function() {
-                    var filterElement = $(this).attr("data-filter");
-                    var count = $(".filter-layout").find(filterElement).length;
-
-                    // Limpar o conteúdo existente antes de adicionar o contador
-                    $(this).children(".filter-text").find(".count").remove();
-
-                    // Adicionar o contador apenas se houver mais de 0 itens
-                    if (count > 0) {
-                        $(this)
-                            .children(".filter-text")
-                            .append('<span class="count">(' + count + ")</span>");
-                    }
-                });
-            }
+            $(".post-filter.has-dynamic-filters-counter").length && $(".post-filter li").each(function() {
+                $(this).attr("data-filter")
+            })
         }
-
         projectMasonaryLayout();
     </script>
 

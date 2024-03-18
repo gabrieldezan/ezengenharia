@@ -30,7 +30,7 @@
                     <div class="header_topmenu_1">
                         <ul class="list-unstyled">
                             <li><a href="<?php echo "mailto:" . $voResultadoConfiguracoes->email ?>"><span class="fas fa-envelope"></span><?php echo $voResultadoConfiguracoes->email ?></a></li>
-                            <li><a href="<?php echo "tel:55" . preg_replace("/[\s\W]+/", "", $voResultadoContatos->telefone) ?>"><span class="flaticon-telephone"></span><?php echo $voResultadoContatos->telefone ?></a></li>
+                            <li><a href="<?php echo "tel:55" . preg_replace("/[\s\W]+/", "", $voResultadoContatos->telefone) ?>"><span class="fas fa-phone-volume"></span><?php echo $voResultadoContatos->telefone ?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -45,16 +45,16 @@
                     <div class="main-nav__left main-nav__left_one float-left">
                         <div class="logo_one">
                             <a href="<?php echo URL ?>" class="main-nav__logo">
-                                <img src="<?php echo URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" class="main-logo" title="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo $voResultadoConfiguracoes->nome_empresa ?>">
+                                <img src="<?php echo URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" class="main-logo" title="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" alt="<?php echo $voResultadoConfiguracoes->nome_empresa ?>" width="85" height="70">
                             </a>
                         </div>
-                        <a href="#" class="side-menu__toggler">
+                        <a href="#" class="side-menu__toggler" title="Menu">
                             <i class="fa fa-bars"></i>
                         </a>
                     </div>
 
                     <div class="main-nav__main-navigation one float-right">
-                        <ul class=" main-nav__navigation-box float-left">
+                        <ul class="main-nav__navigation-box float-left">
                             <?php if ($pagina == "home") { ?>
                                 <li class="current">
                                     <a href="<?php echo URL ?>">Home</a>
@@ -103,7 +103,7 @@
                                         ?>
                                     </ul>
                                 </li>
-                                <?php }
+                            <?php }
                             $vsSqlCountBlog = "SELECT COUNT(*) AS numero_posts FROM blog_postagem WHERE status = 1 AND data_publicacao < '$data_hora_atual'";
                             $vrsExecutaCountBlog = mysqli_query($Conexao, $vsSqlCountBlog) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                             while ($voResultadoCountBlog = mysqli_fetch_object($vrsExecutaCountBlog)) {
@@ -116,7 +116,7 @@
                                         <li>
                                             <a href="<?php echo URL . "blog" ?>">Blog</a>
                                         </li>
-                                <?php
+                                    <?php
                                     }
                                 }
                             }

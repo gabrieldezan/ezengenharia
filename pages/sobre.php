@@ -69,9 +69,13 @@
                                     $vsSqlTituloSobre = "SELECT titulo, subtitulo FROM titulos_personalizados WHERE id_titulos_personalizados = 12";
                                     $vrsExecutaTituloSobre = mysqli_query($Conexao, $vsSqlTituloSobre) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                                     while ($voResultadoTituloSobre = mysqli_fetch_object($vrsExecutaTituloSobre)) {
+                                        if (!empty($voResultadoTituloSobre->subtitulo)) {
                                     ?>
-                                        <h4><?php echo $voResultadoTituloSobre->titulo ?></h4>
-                                        <h2><?php echo $voResultadoTituloSobre->subtitulo ?></h2>
+                                            <h4><?php echo $voResultadoTituloSobre->subtitulo ?></h4>
+                                        <?php
+                                        }
+                                        ?>
+                                        <h2><?php echo $voResultadoTituloSobre->titulo ?></h2>
                                     <?php
                                     }
                                     ?>
@@ -92,19 +96,22 @@
             <div class="container">
                 <ul class="counter_two_box list-unstyled">
                     <?php
-                    $vsSqlMetricas = "SELECT titulo, numero, medida FROM metricas WHERE status = 1";
+                    $vsSqlMetricas = "SELECT titulo, numero, medida, icone FROM metricas WHERE status = 1";
                     $vrsExecutaMetricas = mysqli_query($Conexao, $vsSqlMetricas) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoMetricas = mysqli_fetch_object($vrsExecutaMetricas)) {
                     ?>
-                        <li class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                        <div class="counter_two_single wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                            <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoMetricas->icone) . '"></i>' ?>
                             <h2>
                                 <span class="counter"><?php echo $voResultadoMetricas->numero ?></span>
                                 <?php if (!empty($voResultadoMetricas->medida)) {
                                     echo $voResultadoMetricas->medida;
                                 } ?>
                             </h2>
-                            <p><?php echo $voResultadoMetricas->titulo ?></p>
-                        </li>
+                            <div class="titulo-metrica">
+                                <p><?php echo $voResultadoMetricas->titulo ?></p>
+                            </div>
+                        </div>
                     <?php
                     }
                     ?>
@@ -114,14 +121,14 @@
 
         <section class="four_boxes">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <?php
                     $vsSqlMVV = "SELECT texto_missao, icone_missao, texto_visao, icone_visao, texto_valores, icone_valores FROM missao_visao_valores";
                     $vrsExecutaMVV = mysqli_query($Conexao, $vsSqlMVV) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
                     while ($voResultadoMVV = mysqli_fetch_object($vrsExecutaMVV)) {
                     ?>
                         <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="four_boxes_single wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
+                            <div class="missao four_boxes_single wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
                                 <div class="four_boxes_icon">
                                     <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoMVV->icone_missao) . '"></i>' ?>
                                 </div>
@@ -132,7 +139,7 @@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6">
-                            <div class="four_boxes_single wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="visao four_boxes_single wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
                                 <div class="four_boxes_icon">
                                     <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoMVV->icone_visao) . '"></i>' ?>
                                 </div>
@@ -142,7 +149,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="four_boxes_single wow fadeInUp" data-wow-delay="300ms" data-wow-duration="1500ms">
                                 <div class="four_boxes_icon">
                                     <?php echo '<i class="' . str_replace(array('<i class="', '"></i>'), '', $voResultadoMVV->icone_valores) . '"></i>' ?>
@@ -216,8 +223,6 @@
         ?>
 
     </div>
-
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
 
     <?php
     // MENU MOBILE

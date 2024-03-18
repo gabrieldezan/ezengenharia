@@ -8,7 +8,6 @@ class BannersSlideshow extends Conexao {
     private $id_banner;
     private $imagem;
     private $titulo;
-    private $descricao;
     private $link;
     private $texto_botao;
     private $link_nova_aba;
@@ -29,7 +28,6 @@ class BannersSlideshow extends Conexao {
                     INSERT INTO banner (
                         imagem,
                         titulo,
-                        descricao,
                         link,
                         texto_botao,
                         link_nova_aba,
@@ -44,14 +42,12 @@ class BannersSlideshow extends Conexao {
                         ?,
                         ?,
                         ?,
-                        ?,
                         ?
                     );
                 ');
                 $salva_dados->execute(array(
                     "$this->imagem",
                     "$this->titulo",
-                    "$this->descricao",
                     "$this->link",
                     "$this->texto_botao",
                     "$this->link_nova_aba",
@@ -65,7 +61,6 @@ class BannersSlideshow extends Conexao {
                     UPDATE banner SET 
                         imagem = ?,
                         titulo = ?,
-                        descricao = ?,
                         link = ?,
                         texto_botao = ?,
                         link_nova_aba = ?,
@@ -78,7 +73,6 @@ class BannersSlideshow extends Conexao {
                 $salva_dados->execute(array(
                     "$this->imagem",
                     "$this->titulo",
-                    "$this->descricao",
                     "$this->link",
                     "$this->texto_botao",
                     "$this->link_nova_aba",
@@ -144,7 +138,6 @@ class BannersSlideshow extends Conexao {
                 SELECT
                     imagem,
                     titulo,
-                    descricao,
                     link,
                     texto_botao,
                     link_nova_aba,
@@ -185,10 +178,6 @@ class BannersSlideshow extends Conexao {
         return $this->titulo;
     }
 
-    function getDescricao() {
-        return $this->descricao;
-    }
-
     function getLink() {
         return $this->link;
     }
@@ -227,10 +216,6 @@ class BannersSlideshow extends Conexao {
 
     function setTitulo($titulo) {
         $this->titulo = $titulo;
-    }
-
-    function setDescricao($descricao) {
-        $this->descricao = $descricao;
     }
 
     function setLink($link) {

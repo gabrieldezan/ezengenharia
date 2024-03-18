@@ -158,8 +158,6 @@ if ($vrsQntPost > 0) {
 
         </div>
 
-        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-
         <?php
         // MENU MOBILE
         include 'php/menu-mobile.php';
