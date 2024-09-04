@@ -254,7 +254,7 @@
                                 while ($voResultadoGrupos = mysqli_fetch_object($vrsExecutaGrupos)) {
                                 ?>
                                     <div class="item">
-                                        <div class="our_projects_one_single">
+                                        <div class=" our_projects_one_single">
                                             <div class="our_projects_one_image">
                                                 <img loading="lazy" src="<?php echo URL . "wdadmin/uploads/galeria_imagem/" . $imagemProjetosThumb ?>" title="<?php echo $voResultadoProjetos->titulo ?>" alt="<?php echo $voResultadoProjetos->titulo ?>" width="<?php echo $voResultadoProjetos->largura_thumb ?>" height="<?php echo $voResultadoProjetos->altura_thumb ?>">
                                                 <a href="<?php echo URL . "projeto/" . $voResultadoProjetos->url_projeto ?>" title="<?php echo "Visualizar " . $voResultadoProjetos->titulo ?>">

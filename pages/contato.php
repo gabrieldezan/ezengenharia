@@ -123,6 +123,9 @@
                     <div class="col-xl-7">
                         <div class="contact-one__form__wrap">
                             <form id="form_contato" class="contact-one__form">
+                                <input type="hidden" id="vsUrl" name="vsUrl" value="<?php echo URL ?>">
+                                <input type="hidden" id="vsEmailContato" name="vsEmailContato" value="<?php echo EMAIL_CONTATO ?>">
+                                <input type="hidden" id="vsNomeEmpresa" name="vsNomeEmpresa" value="<?php echo $voResultadoConfiguracoes->nome_empresa ?>">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
@@ -182,15 +185,14 @@
     // CSS
     include 'php/css.php';
     ?>
-
-    <link href="<?php echo URL . "wdadmin/assets/plugins/sweetalert/sweetalert.css" ?>" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo URL . "wdadmin/assets/plugins/sweetalert/sweetalert.min.css" ?>">
 
     <?php
     // SCRIPTS
     include 'php/scripts.php';
     ?>
+    <script src="<?php echo URL . "wdadmin/js/jquery.mask.min.js" ?>" rel="stylesheet"></script>
     <script src="<?php echo URL . "wdadmin/assets/plugins/sweetalert/sweetalert.min.js" ?>"></script>
-    <script src="<?php echo URL . "wdadmin/js/jquery.mask.min.js" ?>"></script>
     <script src="<?php echo URL . "wdadmin/js/contato.min.js" ?>"></script>
 
 </body>

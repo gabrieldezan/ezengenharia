@@ -167,6 +167,7 @@
                     include 'php/sidebar-blog.php';
                     ?>
                 </div>
+
             </div>
         </section>
 

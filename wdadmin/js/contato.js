@@ -32,6 +32,7 @@ $(document).ready(function () {
                 if (vsReturn == "1") {
                     LimpaForm();
                     Sucesso();
+                    formulario_conversao();
                 } else {
                     Aviso();
                 }

@@ -1,4 +1,5 @@
 <script src="<?php echo URL . "assets/js/jquery.min.js" ?>"></script>
+<!-- <script src="<?php echo URL . "assets/js/bootstrap.bundle.min.js" ?>"></script> -->
 <script src="<?php echo URL . "assets/js/owl.carousel.min.js" ?>"></script>
 <script src="<?php echo URL . "assets/js/waypoints.min.js" ?>"></script>
 <script src="<?php echo URL . "assets/js/jquery.counterup.min.js" ?>"></script>
