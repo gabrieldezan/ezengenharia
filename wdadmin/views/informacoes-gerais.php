@@ -44,7 +44,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-2 col-form-label col-form-label-sm text-right">Descrição</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control form-control-sm mascaraTelefone" id="inputDescricao" name="inputDescricao" placeholder="Informe aqui a descrição que aparecerá no compartilhamento de link e pesquisas Google..." />
+                                        <input type="text" class="form-control form-control-sm" id="inputDescricao" name="inputDescricao" placeholder="Informe aqui a descrição que aparecerá no compartilhamento de link e pesquisas Google..." />
                                     </div>
                                 </div>
                                 <div class="form-group row">

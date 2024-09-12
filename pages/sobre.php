@@ -92,7 +92,7 @@
             </div>
         </section>
 
-        <section class="counter_two three" style="background-image: url(<?php echo URL . 'assets/images/resources/counter_two_bg.jpg' ?>)">
+        <section class="counter_two three" style="background-image: url(<?php echo URL . 'assets/images/counter_two_bg.webp' ?>)">
             <div class="container">
                 <ul class="counter_two_box list-unstyled">
                     <?php

@@ -30,9 +30,7 @@ $(document).ready(function () {
                 $("#botao_enviar_mensagem").html('Enviar Mensagem');
                 $("#botao_enviar_mensagem").prop("disabled", false);
                 if (vsReturn == "1") {
-                    LimpaForm();
-                    Sucesso();
-                    formulario_conversao();
+                    window.location.href = vsUrl + 'obrigado';
                 } else {
                     Aviso();
                 }
@@ -48,18 +46,6 @@ $(document).ready(function () {
 
 });
 
-function Sucesso() {
-    swal("Parabéns!", "Contato enviado com sucesso!", "success");
-}
-
 function Aviso() {
     swal("Aviso!", "Ocorreu um erro ao enviar o contato!", "warning");
-}
-
-function LimpaForm() {
-    $("#vsNome").val("");
-    $("#vsEmail").val("");
-    $("#vsTelefone").val("");
-    $("#vsAssunto").val("");
-    $("#vsMensagem").val("");
 }

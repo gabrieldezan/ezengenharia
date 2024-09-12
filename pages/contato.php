@@ -129,27 +129,34 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="text" id="vsNome" name="vsNome" placeholder="Nome" required>
+                                            <input type="text" id="vsNome" name="vsNome" placeholder="Nome *" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="email" id="vsEmail" name="vsEmail" placeholder="E-mail" required>
+                                            <input type="email" id="vsEmail" name="vsEmail" placeholder="E-mail *" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="text" id="vsTelefone" name="vsTelefone" placeholder="Telefone" required>
+                                            <input type="text" id="vsTelefone" name="vsTelefone" placeholder="Telefone *" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="text" id="vsAssunto" name="vsAssunto" placeholder="Assunto" required>
+                                            <select id="vsAssunto" name="vsAssunto" required>
+                                                <option>Projeto Arquitetônico</option>
+                                                <option>Projetos de Engenharia</option>
+                                                <option>Regularização de Obra</option>
+                                                <option>Acompanhamento de Obra</option>
+                                                <option>Construção</option>
+                                                <option>Estruturas de Solo para Energia Solar</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="input-group">
-                                            <textarea id="vsMensagem" name="vsMensagem" placeholder="Mensagem" required></textarea>
+                                            <textarea id="vsMensagem" name="vsMensagem" placeholder="Mensagem"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
