@@ -145,12 +145,13 @@
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <select id="vsAssunto" name="vsAssunto" required>
-                                                <option>Projeto Arquitetônico</option>
-                                                <option>Projetos de Engenharia</option>
-                                                <option>Regularização de Obra</option>
-                                                <option>Acompanhamento de Obra</option>
-                                                <option>Construção</option>
-                                                <option>Estruturas de Solo para Energia Solar</option>
+                                                <option value="">Selecione uma opção</option>
+                                                <option value="Projeto Arquitetônico">Projeto Arquitetônico</option>
+                                                <option value="Projetos de Engenharia">Projetos de Engenharia</option>
+                                                <option value="Regularização de Obra">Regularização de Obra</option>
+                                                <option value="Acompanhamento de Obra">Acompanhamento de Obra</option>
+                                                <option value="Construção">Construção</option>
+                                                <option value="Estruturas de Solo para Energia Solar">Estruturas de Solo para Energia Solar</option>
                                             </select>
                                         </div>
                                     </div>
