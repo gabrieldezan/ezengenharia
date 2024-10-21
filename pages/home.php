@@ -11,7 +11,7 @@
     <meta name="description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
     <meta property="og:title" content="<?php echo $voResultadoConfiguracoes->titulo ?>" />
     <meta property="og:description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
-    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" />
+    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_secundaria ?>" />
     <meta property="og:url" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL ?>" />
     <title><?php echo $voResultadoConfiguracoes->titulo ?></title>
 </head>
@@ -436,12 +436,13 @@
                                     ti.largura_thumb,
                                     ti.altura_thumb
                                 FROM
-                                    blog_postagem bp,
-                                    tamanho_imagens ti
+                                    tamanho_imagens ti,
+                                    blog_postagem bp                                    
                                     LEFT JOIN autores a ON bp.id_autores = a.id_autores
                                 WHERE
                                     bp.status = 1 AND
-                                    bp.data_publicacao < '$data_hora_atual'
+                                    bp.data_publicacao < '$data_hora_atual' AND
+                                    ti.id_tamanho_imagens = 14
                                 ORDER BY
                                     bp.data_publicacao DESC
                                 LIMIT 3

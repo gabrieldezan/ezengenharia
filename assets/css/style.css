@@ -7038,7 +7038,7 @@ li {
   color: #ffffff;
 }
 
-.sidebar__search-form button[type="submit"] {
+.sidebar__search-form button[type="button"] {
   background-color: transparent;
   color: #ffffff;
   font-size: 20px;

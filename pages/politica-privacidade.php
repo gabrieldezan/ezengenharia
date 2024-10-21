@@ -11,7 +11,7 @@
     <meta name="description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
     <meta property="og:title" content="<?php echo "Política de Privacidade | " . $voResultadoConfiguracoes->titulo ?>" />
     <meta property="og:description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
-    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" />
+    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_secundaria ?>" />
     <meta property="og:url" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "politica-privacidade" ?>" />
     <title><?php echo "Política de Privacidade | " . $voResultadoConfiguracoes->titulo ?></title>
 </head>

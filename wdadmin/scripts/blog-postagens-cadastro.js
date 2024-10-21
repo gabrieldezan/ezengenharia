@@ -163,7 +163,7 @@ function edita_blog_postagem(viIdBlogPostagens) {
                 monta_select("inputIdAutores", "id_autores", "nome", "autores", "WHERE status = 1", "nome", data[0].id_autores, false);
                 $("#inputDataPublicacao").val(data[0].data_publicacao);
                 $("#inputStatus").val(data[0].status);
-                $("#inputUrl_amigavel").val(vsUrlSite + data[0].url_amigavel);
+                $("#inputUrl_amigavel").val(vsUrlSite + "post/" + data[0].url_amigavel + "-" + viIdBlogPostagens);
                 $("#inputVideo").val(data[0].video);
                 $("#inputTexto").val(data[0].texto);
                 CloseLoading();

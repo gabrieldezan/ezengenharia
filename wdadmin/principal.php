@@ -97,7 +97,7 @@ if ($_COOKIE['wd_logado']):
 
         <body class="fix-header fix-sidebar card-no-border mini-sidebar">
             <input type="hidden" id="vsUrl" value="<?php echo URL . "wdadmin/" ?>"/>
-            <input type="hidden" id="vsUrlSite" value="<?php echo URL_SITE . "/" ?>"/>
+            <input type="hidden" id="vsUrlSite" value="<?php echo URL_SITE ?>"/>
             <!-- ============================================================== -->
             <!-- Preloader - style you can find in spinners.css -->
             <!-- ============================================================== -->

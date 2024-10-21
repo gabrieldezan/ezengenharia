@@ -11,7 +11,7 @@
     <meta name="description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
     <meta property="og:title" content="<?php echo "Blog | " . $voResultadoConfiguracoes->titulo ?>" />
     <meta property="og:description" content="<?php echo substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, strrpos(substr(strip_tags(trim($voResultadoConfiguracoes->descricao)), 0, 197), ' ')) . '...'; ?>" />
-    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_principal ?>" />
+    <meta property="og:image" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "wdadmin/uploads/informacoes_gerais/" . $voResultadoConfiguracoes->logo_secundaria ?>" />
     <meta property="og:url" content="<?php echo "https://" . $_SERVER['HTTP_HOST'] . URL . "blog" ?>" />
     <title><?php echo "Blog | " . $voResultadoConfiguracoes->titulo ?></title>
 </head>
@@ -33,15 +33,15 @@
         $vrsExecutaImagemFundo = mysqli_query($Conexao, $vsSqlImagemFundo) or die("Erro ao efetuar a operação no banco de dados! <br> Arquivo:" . __FILE__ . "<br>Linha:" . __LINE__ . "<br>Erro:" . mysqli_error($Conexao));
         while ($voResultadoImagemFundo = mysqli_fetch_object($vrsExecutaImagemFundo)) {
         ?>
-        <section class="page-header" style="background-image: url(<?php echo URL . 'wdadmin/uploads/informacoes/' . $voResultadoImagemFundo->imagem ?>);">
-            <div class="container">
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="<?php echo URL ?>">Home</a></li>
-                    <li><span>Blog</span></li>
-                </ul>
-                <h2>Blog</h2>
-            </div>
-        </section>
+            <section class="page-header" style="background-image: url(<?php echo URL . 'wdadmin/uploads/informacoes/' . $voResultadoImagemFundo->imagem ?>);">
+                <div class="container">
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="<?php echo URL ?>">Home</a></li>
+                        <li><span>Blog</span></li>
+                    </ul>
+                    <h2>Blog</h2>
+                </div>
+            </section>
         <?php
         }
         ?>
@@ -97,13 +97,17 @@
                                             WHEN 'November' THEN 'Nov'
                                             WHEN 'December' THEN 'Dez'
                                         END AS mes_publicacao,
-                                        DATE_FORMAT(data_publicacao, '%Y') AS ano_publicacao
+                                        DATE_FORMAT(data_publicacao, '%Y') AS ano_publicacao,
+                                        ti.largura_thumb,
+                                        ti.altura_thumb
                                     FROM
-                                        blog_postagem bp
+                                        tamanho_imagens ti,
+                                        blog_postagem bp                                    
                                         LEFT JOIN autores a ON bp.id_autores = a.id_autores
                                     WHERE
                                         bp.status = 1 AND
-                                        bp.data_publicacao < '$data_hora_atual'
+                                        bp.data_publicacao < '$data_hora_atual' AND
+                                        ti.id_tamanho_imagens = 14
                                     ORDER BY
                                         bp.data_publicacao DESC
                                     LIMIT

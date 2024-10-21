@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 11/09/2024 às 18:30
+-- Tempo de geração: 21/10/2024 às 12:07
 -- Versão do servidor: 10.6.18-MariaDB-cll-lve
--- Versão do PHP: 8.1.29
+-- Versão do PHP: 8.1.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -271,7 +271,8 @@ INSERT INTO `conteudo_personalizado` (`id_conteudo_personalizado`, `titulo`, `ic
 (11, 'Parceiros', 0, 1, '225', '100', 0, 1, 0, 0, 0),
 (12, 'Áreas de atuação', 1, 0, '0', '0', 1, 0, 0, 0, 0),
 (13, 'Imagem de fundo páginas internas', 0, 1, '1903', '360', 0, 0, 0, 0, 0),
-(14, 'Botão orçamento menu', 0, 0, '0', '0', 0, 1, 0, 0, 0);
+(14, 'Botão orçamento menu', 0, 0, '0', '0', 0, 1, 0, 0, 0),
+(15, 'Página Obrigado', 1, 0, '0', '0', 1, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -551,17 +552,18 @@ CREATE TABLE `informacoes` (
 INSERT INTO `informacoes` (`id_informacoes`, `titulo`, `icone`, `imagem`, `texto`, `link`, `data`, `hora`, `numero`, `id_conteudo_personalizado`) VALUES
 (44, 'Voltes Energia Solar', '', 'parceiros-voltes-energia-solar-202312181803.webp', '', 'https://voltesenergia.com.br/', '0000-00-00', '00:00:00', 0, 11),
 (45, 'Mata Consultoria Ambiental', '', 'parceiros-mata-consultoria-ambiental-202312181806.webp', '', 'https://mataconsultoria.com.br/', '0000-00-00', '00:00:00', 0, 11),
-(46, 'Projetos', 'fal fa-user-hard-hat', '', '<p>Nossa equipe altamente qualificada e experiente se empenha em fornecer planejamento detalhado e eficiente, alinhando as solu&ccedil;&otilde;es com a execu&ccedil;&atilde;o, priorizando sempre a economia e a seguran&ccedil;a.</p>', '', '0000-00-00', '00:00:00', 0, 12),
-(47, 'Execução', 'fal fa-digging', '', '<p>Atrav&eacute;s de documentos como Or&ccedil;amento Anal&iacute;tico, Cronograma F&iacute;sico-financeiro, garantimos que sua obra ser&aacute; executada dentro do prazo e custo previstos, garantindo a qualidade e evitando qualquer imprevisito durante a execu&ccedil;&atilde;o.</p>', '', '0000-00-00', '00:00:00', 0, 12),
-(48, 'Regularização', 'fal fa-file-signature', '', '<p>Com uma abordagem especializada e &aacute;gil, simplificamos processos burocr&aacute;ticos, atingindo a conformidade legal para seu im&oacute;vel de maneira eficaz e sem complica&ccedil;&otilde;es.</p>', '', '0000-00-00', '00:00:00', 0, 12),
+(46, 'Projetos', 'fal fa-user-hard-hat', '', '', '', '0000-00-00', '00:00:00', 0, 12),
+(47, 'Execução', 'fal fa-digging', '', '', '', '0000-00-00', '00:00:00', 0, 12),
+(48, 'Regularização', 'fal fa-file-signature', '', '', '', '0000-00-00', '00:00:00', 0, 12),
 (49, 'Imagem de fundo', '', 'imagem-de-fundo-paginas-internas-imagem-de-fundo-202312141831.webp', '', '', '0000-00-00', '00:00:00', 0, 13),
 (50, 'JD Home Center', '', 'parceiros-jd-home-center-202312211803.webp', '', '', '0000-00-00', '00:00:00', 0, 11),
 (51, 'Bonamigo Ferro e Aço', '', 'parceiros-bonamigo-ferro-e-aco-202312181813.webp', '', 'https://bonamigo.ind.br/', '0000-00-00', '00:00:00', 0, 11),
 (52, 'Telhas Cascavel', '', 'parceiros-telhas-cascavel-202312181817.webp', '', '', '0000-00-00', '00:00:00', 0, 11),
 (53, 'DZ Materiais Elétricos', '', 'parceiros-dz-materiais-eletricos-202312181825.webp', '', 'https://www.dzmateriaiseletricos.com.br/', '0000-00-00', '00:00:00', 0, 11),
 (54, 'Hydrolar', '', 'parceiros-hydrolar-202312181829.webp', '', 'https://www.hydrolar.com.br/', '0000-00-00', '00:00:00', 0, 11),
-(55, 'Estruturas de Solo', 'fal fa-solar-panel', '', '<p>Seguindo a via da sustentabilidade, nossa empresa fornece o servi&ccedil;o de instala&ccedil;&atilde;o de estruturas de solo para m&oacute;dulos solares. Neste servi&ccedil;o, a qualidade dos materiais e os alinhamentos s&atilde;o sempre nossa maior prioridade, trazendo garantia e tranquilidade para seu investimento.</p>', '', '0000-00-00', '00:00:00', 0, 12),
-(56, 'FAZER ORÇAMENTO', '', '', '', 'https://contate.me/ezengenharia', '0000-00-00', '00:00:00', 0, 14);
+(55, 'Estruturas de Solo', 'fal fa-solar-panel', '', '', '', '0000-00-00', '00:00:00', 0, 12),
+(56, 'FAZER ORÇAMENTO', '', '', '', 'https://contate.me/ezengenharia', '0000-00-00', '00:00:00', 0, 14),
+(57, 'Recebemos sua mensagem!', 'Enviar Whatsapp', '', '<h2>Voc&ecirc; tamb&eacute;m pode entrar em contato via whatsapp!</h2>\r\n<h4>Sinta-se &agrave; vontade para nos contactar clicando no bot&atilde;o abaixo.</h4>\r\n<p>&nbsp;</p>', 'https://wa.me/5545999705116', '0000-00-00', '00:00:00', 0, 15);
 
 -- --------------------------------------------------------
 
@@ -594,7 +596,7 @@ CREATE TABLE `informacoes_gerais` (
 --
 
 INSERT INTO `informacoes_gerais` (`nome_empresa`, `titulo`, `descricao`, `whatsapp`, `celular1`, `celular2`, `email`, `email_contato`, `email_plano_empresarial`, `google_search_console`, `google_analytics`, `facebook_pixel`, `facebook_dominio`, `favicon`, `logo_principal`, `logo_secundaria`, `politicas_privacidade`) VALUES
-('EZ Engenharia', 'EZ Engenharia', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour. Lorem are many variations of passages of Lorem Ipsum available, but the majority have suffered.', '(45) 99970-5116', '', '', 'contato@ezengenharia.com.br', 'contato@ezengenharia.com.br', '', '', '<!-- Google tag (gtag.js) -->\r\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-Z3P5BVDG32\"></script>\r\n<script>\r\n  window.dataLayer = window.dataLayer || [];\r\n  function gtag(){dataLayer.push(arguments);}\r\n  gtag(\'js\', new Date());\r\n\r\n  gtag(\'config\', \'G-Z3P5BVDG32\');\r\n</script>', '', NULL, 'favicon-ez-engenharia-202312111414.webp', 'logo-ez-engenharia-202312111414.webp', '', '<p style=\"text-align: justify;\"><strong>Atualiza&ccedil;&atilde;o 11/01/2021</strong></p>\r\n<p style=\"text-align: justify;\">A&nbsp;<strong>EZ Engenharia&nbsp;</strong>tem como objetivo receber dados pessoais para contato com poss&iacute;veis clientes.&nbsp;A&nbsp;<strong>EZ Engenharia&nbsp;</strong>coleta, utiliza, mas n&atilde;o compartilha sua informa&ccedil;&atilde;o.</p>\r\n<p style=\"text-align: justify;\">Se tiver quaisquer d&uacute;vidas ou coment&aacute;rios relacionados a esta Pol&iacute;tica de Privacidade, fale conosco pelo endere&ccedil;o <strong>contato@ezengenharia.com.</strong><strong>br</strong>.</p>\r\n<p><strong>Atualiza&ccedil;&atilde;o 11/01/2021</strong></p>\r\n<p>A&nbsp;EZ Engenharia tem como objetivo receber curr&iacute;culos para as vagas disponibilizadas em m&iacute;dias sociais e outros canais. Os candidatos devem fornecer dados b&aacute;sicos para o cadastro no momento da sua candidatura. Esta pol&iacute;tica de privacidade descreve como e em que circunst&acirc;ncias a&nbsp;EZ Engenharia coleta, utiliza e compartilha sua informa&ccedil;&atilde;o quando da sua candidatura.</p>\r\n<p>Se tiver quaisquer d&uacute;vidas ou coment&aacute;rios relacionados a esta Pol&iacute;tica de Privacidade, fale conosco pelo endere&ccedil;o&nbsp;<strong>contato@ezengenharia.com.br</strong>.</p>\r\n<ol>\r\n<li><strong>Coleta de dados</strong></li>\r\n</ol>\r\n<p>Podemos coletar dados atrav&eacute;s do fornecimento volunt&aacute;rio de suas informa&ccedil;&otilde;es no formul&aacute;rio do site, ou ainda, podemos guardar os dados b&aacute;sicos da sua navega&ccedil;&atilde;o e intera&ccedil;&atilde;o com o site e ferramentas.</p>\r\n<p><strong>Para candidatos</strong></p>\r\n<p>Solicitamos informa&ccedil;&otilde;es b&aacute;sicas de contato no formul&aacute;rio no site, sendo necess&aacute;rio anexar seu curr&iacute;culo com as informa&ccedil;&otilde;es relacionadas &agrave; sua experi&ecirc;ncia profissional, escolaridade, habilidades profissionais etc. Essas informa&ccedil;&otilde;es s&atilde;o essenciais no processo seletivo da empresa.</p>\r\n<p><strong>Registro de atividades</strong></p>\r\n<p>A sua navega&ccedil;&atilde;o e intera&ccedil;&atilde;o tamb&eacute;m podem ser registrados, atrav&eacute;s de diversas tecnologias aplic&aacute;veis, para que seja poss&iacute;vel oferecer o melhor conte&uacute;do, orientar estat&iacute;sticas para melhoria e cria&ccedil;&atilde;o de novos produtos, assim como atender &agrave; necessidades legais e administrativas em caso de fraude ou ordem judicial.</p>\r\n<ol start=\"2\">\r\n<li><strong>Armazenamento e Transfer&ecirc;ncia de Dados</strong></li>\r\n</ol>\r\n<p><strong>Acesso aos dados</strong></p>\r\n<p>A&nbsp;EZ Engenharia n&atilde;o divulga ou compartilha dados pessoais privados do seu registro. Seus dados de acesso (inclusive e-mail), endere&ccedil;o etc., n&atilde;o ser&atilde;o fornecidos a terceiros, salvo em fase de processo seletivo, quando &eacute; necess&aacute;rio o atendimento com psic&oacute;logas indicadas pela&nbsp;EZ Engenharia, e com autoriza&ccedil;&atilde;o pr&eacute;via do usu&aacute;rio.</p>\r\n<p>Em virtude de ordens judiciais, ou de disposi&ccedil;&otilde;es legais e administrativas,&nbsp;a EZ Engenharia pode ser compelido a revelar informa&ccedil;&atilde;o &agrave;s autoridades ou terceiras partes.</p>\r\n<p><strong>Armazenamento</strong><br />Todos os dados coletados ser&atilde;o armazenados no banco de dados da EZ Engenharia em ambiente seguro, observadas as tecnologias dispon&iacute;veis.</p>\r\n<ol start=\"3\">\r\n<li><strong>Uso e divulga&ccedil;&atilde;o de Informa&ccedil;&otilde;es</strong></li>\r\n</ol>\r\n<p>A&nbsp;EZ Engenharia utiliza internamente os dados coletados.</p>\r\n<p><strong>Uso interno</strong></p>\r\n<p>Dados e informa&ccedil;&otilde;es coletados dos usu&aacute;rios s&atilde;o utilizados internamente para:</p>\r\n<ul>\r\n<li>Identificar os candidatos cadastrados para determinadas vagas;</li>\r\n<li>Cumprir ordem legal ou judicial.</li>\r\n</ul>\r\n<p><strong>Curr&iacute;culo</strong><br />O curr&iacute;culo ser&aacute; enviado aos recrutadores de cada vaga, para sele&ccedil;&atilde;o e &agrave; poss&iacute;vel contrata&ccedil;&atilde;o de pessoal.</p>\r\n<p>Apenas&nbsp;a EZ Engenharia ter&aacute; acesso aos dados pessoais dos candidatos: nome, endere&ccedil;o e telefone. Salvo em fase de processo seletivo, quando &eacute; necess&aacute;rio o atendimento com psic&oacute;logas indicadas pela EZ Engenharia, quando tamb&eacute;m ter&atilde;o acesso as demais informa&ccedil;&otilde;es profissionais de seu curr&iacute;culo.</p>\r\n<p><strong>Vagas e p&aacute;gina da empresa</strong></p>\r\n<p>Dados pessoais dos recrutadores n&atilde;o ser&atilde;o divulgados, salvo em casos excepcionais e com autoriza&ccedil;&atilde;o pr&eacute;via.</p>\r\n<p>As vagas podem ser divulgadas de forma eletr&ocirc;nica em m&iacute;dias sociais.</p>\r\n<ol start=\"4\">\r\n<li><strong>Altera&ccedil;&otilde;es a esta pol&iacute;tica</strong></li>\r\n</ol>\r\n<p>A&nbsp;EZ Engenharia poder&aacute; revisar esta Pol&iacute;tica de Privacidade periodicamente. N&atilde;o nos responsabilizamos por envio de notifica&ccedil;&atilde;o de altera&ccedil;&otilde;es em nossa Pol&iacute;tica de Privacidade, sendo de responsabilidade do candidato aceitar os termos sempre que cadastrar seu curr&iacute;culo em nosso formul&aacute;rio.</p>\r\n<p>&nbsp;</p>');
+('EZ Engenharia', 'EZ Engenharia', 'Serviços de Engenharia', '(45) 99970-5116', '', '', 'contato@ezengenharia.com.br', 'contato@ezengenharia.com.br', '', '', '', '', NULL, 'favicon-ez-engenharia-202410110148.webp', 'logo-ez-engenharia-202312111414.webp', 'logo-alternativa-ez-engenharia-202410110157.webp', '<p style=\"text-align: justify;\"><strong>Atualiza&ccedil;&atilde;o 11/01/2021</strong></p>\r\n<p style=\"text-align: justify;\">A&nbsp;<strong>EZ Engenharia&nbsp;</strong>tem como objetivo receber dados pessoais para contato com poss&iacute;veis clientes.&nbsp;A&nbsp;<strong>EZ Engenharia&nbsp;</strong>coleta, utiliza, mas n&atilde;o compartilha sua informa&ccedil;&atilde;o.</p>\r\n<p style=\"text-align: justify;\">Se tiver quaisquer d&uacute;vidas ou coment&aacute;rios relacionados a esta Pol&iacute;tica de Privacidade, fale conosco pelo endere&ccedil;o <strong>contato@ezengenharia.com.</strong><strong>br</strong>.</p>\r\n<p><strong>Atualiza&ccedil;&atilde;o 11/01/2021</strong></p>\r\n<p>A&nbsp;EZ Engenharia tem como objetivo receber curr&iacute;culos para as vagas disponibilizadas em m&iacute;dias sociais e outros canais. Os candidatos devem fornecer dados b&aacute;sicos para o cadastro no momento da sua candidatura. Esta pol&iacute;tica de privacidade descreve como e em que circunst&acirc;ncias a&nbsp;EZ Engenharia coleta, utiliza e compartilha sua informa&ccedil;&atilde;o quando da sua candidatura.</p>\r\n<p>Se tiver quaisquer d&uacute;vidas ou coment&aacute;rios relacionados a esta Pol&iacute;tica de Privacidade, fale conosco pelo endere&ccedil;o&nbsp;<strong>contato@ezengenharia.com.br</strong>.</p>\r\n<ol>\r\n<li><strong>Coleta de dados</strong></li>\r\n</ol>\r\n<p>Podemos coletar dados atrav&eacute;s do fornecimento volunt&aacute;rio de suas informa&ccedil;&otilde;es no formul&aacute;rio do site, ou ainda, podemos guardar os dados b&aacute;sicos da sua navega&ccedil;&atilde;o e intera&ccedil;&atilde;o com o site e ferramentas.</p>\r\n<p><strong>Para candidatos</strong></p>\r\n<p>Solicitamos informa&ccedil;&otilde;es b&aacute;sicas de contato no formul&aacute;rio no site, sendo necess&aacute;rio anexar seu curr&iacute;culo com as informa&ccedil;&otilde;es relacionadas &agrave; sua experi&ecirc;ncia profissional, escolaridade, habilidades profissionais etc. Essas informa&ccedil;&otilde;es s&atilde;o essenciais no processo seletivo da empresa.</p>\r\n<p><strong>Registro de atividades</strong></p>\r\n<p>A sua navega&ccedil;&atilde;o e intera&ccedil;&atilde;o tamb&eacute;m podem ser registrados, atrav&eacute;s de diversas tecnologias aplic&aacute;veis, para que seja poss&iacute;vel oferecer o melhor conte&uacute;do, orientar estat&iacute;sticas para melhoria e cria&ccedil;&atilde;o de novos produtos, assim como atender &agrave; necessidades legais e administrativas em caso de fraude ou ordem judicial.</p>\r\n<ol start=\"2\">\r\n<li><strong>Armazenamento e Transfer&ecirc;ncia de Dados</strong></li>\r\n</ol>\r\n<p><strong>Acesso aos dados</strong></p>\r\n<p>A&nbsp;EZ Engenharia n&atilde;o divulga ou compartilha dados pessoais privados do seu registro. Seus dados de acesso (inclusive e-mail), endere&ccedil;o etc., n&atilde;o ser&atilde;o fornecidos a terceiros, salvo em fase de processo seletivo, quando &eacute; necess&aacute;rio o atendimento com psic&oacute;logas indicadas pela&nbsp;EZ Engenharia, e com autoriza&ccedil;&atilde;o pr&eacute;via do usu&aacute;rio.</p>\r\n<p>Em virtude de ordens judiciais, ou de disposi&ccedil;&otilde;es legais e administrativas,&nbsp;a EZ Engenharia pode ser compelido a revelar informa&ccedil;&atilde;o &agrave;s autoridades ou terceiras partes.</p>\r\n<p><strong>Armazenamento</strong><br />Todos os dados coletados ser&atilde;o armazenados no banco de dados da EZ Engenharia em ambiente seguro, observadas as tecnologias dispon&iacute;veis.</p>\r\n<ol start=\"3\">\r\n<li><strong>Uso e divulga&ccedil;&atilde;o de Informa&ccedil;&otilde;es</strong></li>\r\n</ol>\r\n<p>A&nbsp;EZ Engenharia utiliza internamente os dados coletados.</p>\r\n<p><strong>Uso interno</strong></p>\r\n<p>Dados e informa&ccedil;&otilde;es coletados dos usu&aacute;rios s&atilde;o utilizados internamente para:</p>\r\n<ul>\r\n<li>Identificar os candidatos cadastrados para determinadas vagas;</li>\r\n<li>Cumprir ordem legal ou judicial.</li>\r\n</ul>\r\n<p><strong>Curr&iacute;culo</strong><br />O curr&iacute;culo ser&aacute; enviado aos recrutadores de cada vaga, para sele&ccedil;&atilde;o e &agrave; poss&iacute;vel contrata&ccedil;&atilde;o de pessoal.</p>\r\n<p>Apenas&nbsp;a EZ Engenharia ter&aacute; acesso aos dados pessoais dos candidatos: nome, endere&ccedil;o e telefone. Salvo em fase de processo seletivo, quando &eacute; necess&aacute;rio o atendimento com psic&oacute;logas indicadas pela EZ Engenharia, quando tamb&eacute;m ter&atilde;o acesso as demais informa&ccedil;&otilde;es profissionais de seu curr&iacute;culo.</p>\r\n<p><strong>Vagas e p&aacute;gina da empresa</strong></p>\r\n<p>Dados pessoais dos recrutadores n&atilde;o ser&atilde;o divulgados, salvo em casos excepcionais e com autoriza&ccedil;&atilde;o pr&eacute;via.</p>\r\n<p>As vagas podem ser divulgadas de forma eletr&ocirc;nica em m&iacute;dias sociais.</p>\r\n<ol start=\"4\">\r\n<li><strong>Altera&ccedil;&otilde;es a esta pol&iacute;tica</strong></li>\r\n</ol>\r\n<p>A&nbsp;EZ Engenharia poder&aacute; revisar esta Pol&iacute;tica de Privacidade periodicamente. N&atilde;o nos responsabilizamos por envio de notifica&ccedil;&atilde;o de altera&ccedil;&otilde;es em nossa Pol&iacute;tica de Privacidade, sendo de responsabilidade do candidato aceitar os termos sempre que cadastrar seu curr&iacute;culo em nosso formul&aacute;rio.</p>\r\n<p>&nbsp;</p>');
 
 -- --------------------------------------------------------
 
@@ -617,10 +619,10 @@ CREATE TABLE `metricas` (
 --
 
 INSERT INTO `metricas` (`id_metricas`, `titulo`, `numero`, `medida`, `icone`, `posicao`, `status`) VALUES
-(1, 'Projetos elaborados', 76, '', 'far fa-drafting-compass', 1, 1),
+(1, 'Projetos elaborados', 116, '', 'far fa-drafting-compass', 1, 1),
 (2, 'Área construída', 3861, 'm²', 'far fa-digging', 2, 1),
-(3, 'Área regularizada ', 2034, 'm²', 'far fa-check-circle', 3, 1),
-(4, 'Estruturas de solo', 1838, 'módulos', 'far fa-solar-panel', 4, 1);
+(3, 'Área regularizada ', 2154, 'm²', 'far fa-check-circle', 3, 1),
+(4, 'Estruturas de solo', 2420, 'módulos', 'far fa-solar-panel', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -681,7 +683,7 @@ CREATE TABLE `redes_sociais` (
 
 INSERT INTO `redes_sociais` (`id_redes_sociais`, `titulo`, `link`, `imagem`, `icone`) VALUES
 (9, 'Facebook', 'https://www.facebook.com/eloizazanonieng', '', 'fab fa-facebook'),
-(10, 'Instagram', 'https://instagram.com/engeloizanoni', '', 'fab fa-instagram');
+(10, 'Instagram', 'https://www.instagram.com/ez.engenharia/', '', 'fab fa-instagram');
 
 -- --------------------------------------------------------
 
@@ -1170,7 +1172,7 @@ ALTER TABLE `blog_imagens`
 -- AUTO_INCREMENT de tabela `blog_postagem`
 --
 ALTER TABLE `blog_postagem`
-  MODIFY `id_blog_postagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_blog_postagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `blog_postagem_galeria`
@@ -1200,13 +1202,13 @@ ALTER TABLE `clientes`
 -- AUTO_INCREMENT de tabela `contatos_recebidos`
 --
 ALTER TABLE `contatos_recebidos`
-  MODIFY `id_contatos_recebidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_contatos_recebidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `conteudo_personalizado`
 --
 ALTER TABLE `conteudo_personalizado`
-  MODIFY `id_conteudo_personalizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_conteudo_personalizado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `depoimentos`
@@ -1254,7 +1256,7 @@ ALTER TABLE `galeria_imagem`
 -- AUTO_INCREMENT de tabela `informacoes`
 --
 ALTER TABLE `informacoes`
-  MODIFY `id_informacoes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id_informacoes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT de tabela `metricas`
